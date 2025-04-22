@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +99,45 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Mapbox custom styles */
+.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left {
+  display: none !important;
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 16px;
+  color: #666;
+  background: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.price-marker {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.price-marker:hover {
+  z-index: 2;
+}
+
+#map-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#map-popup-container > div {
+  pointer-events: auto;
 }

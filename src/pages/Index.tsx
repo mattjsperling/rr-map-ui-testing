@@ -5,6 +5,7 @@ import { PropertyCard } from "@/components/property/PropertyCard";
 import { AdCard } from "@/components/property/AdCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FilterBar } from "@/components/layout/FilterBar";
+import { homes } from "@/data/homes";
 
 export default function Index() {
   return (
@@ -23,7 +24,7 @@ export default function Index() {
                 <div className="items-center content-center flex-wrap border-b-[color:var(--color-border-divider,#DDD)] bg-[#FAF9F8] flex w-full gap-6 font-bold pt-3 pb-6 px-6 border-b border-solid">
                   <div className="items-center self-stretch flex min-w-60 w-full gap-4 flex-wrap flex-1 shrink basis-[0%] my-auto">
                     <h1 className="text-[#131313] text-ellipsis text-lg leading-6 self-stretch flex-1 shrink basis-[0%] my-auto">
-                      San Francisco, CA homes for sale & real estate
+                      Seattle, WA homes for sale & real estate
                     </h1>
                     <div className="items-center self-stretch flex gap-6 text-sm whitespace-nowrap leading-5 my-auto">
                       <div className="items-center self-stretch flex gap-4 my-auto">
@@ -44,9 +45,9 @@ export default function Index() {
                 <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden p-4">
                   <div className="flex min-w-60 w-[792px] items-center gap-[40px_100px] text-sm font-bold leading-5 justify-between flex-wrap">
                     <div className="self-stretch flex gap-1 text-[#131313]">
-                      <span>40</span>
+                      <span>{homes.length}</span>
                       <span className="text-[#686868] font-normal">of</span>
-                      <span>286 homes</span>
+                      <span>{homes.length} homes</span>
                     </div>
                     <div className="items-center self-stretch flex gap-1 whitespace-nowrap">
                       <span className="text-[#131313]">Sort:</span>
@@ -61,45 +62,37 @@ export default function Index() {
                   </div>
                   
                   {/* Property + ad cards */}
-                  <PropertyCard
-                    imageUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c?placeholderIfAbsent=true"
-                    price={450000}
-                    beds={3}
-                    baths={3.5}
-                    sqft={2560}
-                    address="123 Main St, Seattle, WA 98178"
-                    agent="Cory Brandt · RE/MAX Northwest Realtors"
-                    isHot={true}
-                  />
-                  <PropertyCard
-                    imageUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a?placeholderIfAbsent=true"
-                    price={450000}
-                    beds={3}
-                    baths={3.5}
-                    sqft={2560}
-                    address="123 Main St, Seattle, WA 98178"
-                    agent="Cory Brandt · RE/MAX Northwest Realtors"
-                    isHot={true}
-                  />
-                  <AdCard
-                    imageUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea?placeholderIfAbsent=true"
-                    price={450000}
-                    beds={3}
-                    baths={3.5}
-                    sqft={2560}
-                    address="123 Main St, Seattle, WA 98178"
-                    logoUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a8ad4c008b0babf307c6a5d1a1c15d1a36b894e5?placeholderIfAbsent=true"
-                  />
-                  <PropertyCard
-                    imageUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7?placeholderIfAbsent=true"
-                    price={450000}
-                    beds={3}
-                    baths={3.5}
-                    sqft={2560}
-                    address="123 Main St, Seattle, WA 98178"
-                    agent="Cory Brandt · RE/MAX Northwest Realtors"
-                    isHot={true}
-                  />
+                  {homes.map((home, index) => {
+                    // Every third home is an ad
+                    if ((index + 1) % 3 === 0 && home.isForeclosure) {
+                      return (
+                        <AdCard
+                          key={home.id}
+                          imageUrl={home.imageUrl}
+                          price={home.price}
+                          beds={home.beds}
+                          baths={home.baths}
+                          sqft={home.sqft}
+                          address={home.address}
+                          logoUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a8ad4c008b0babf307c6a5d1a1c15d1a36b894e5?placeholderIfAbsent=true"
+                        />
+                      );
+                    }
+                    
+                    return (
+                      <PropertyCard
+                        key={home.id}
+                        imageUrl={home.imageUrl}
+                        price={home.price}
+                        beds={home.beds}
+                        baths={home.baths}
+                        sqft={home.sqft}
+                        address={home.address}
+                        agent={home.agent}
+                        isHot={home.isHot}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </ScrollArea>
@@ -109,28 +102,6 @@ export default function Index() {
             <MapView />
           </section>
         </main>
-      </div>
-      {/* Map pins overlay */}
-      <div className="absolute z-10 flex mt-[100px] w-[484px] max-w-full flex-col ml-[324px] max-md:mt-0 pointer-events-none">
-        {[
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/3e90b401-20b2-4578-9e68-f20f39df6ea7?placeholderIfAbsent=true",
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/550c9fde-ba61-46f2-9793-8fdc2c3e11cf?placeholderIfAbsent=true",
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/c2f72068-b349-4337-9ec1-a6a8e01e1d5a?placeholderIfAbsent=true",
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/44f1b35c-1c85-4782-b120-25a84bf07962?placeholderIfAbsent=true",
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/abab5c0a-3fda-4d8f-9d7d-7b9e69a94049?placeholderIfAbsent=true",
-          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a0467258-f8e6-4d4d-abb1-27283f3ad9dc?placeholderIfAbsent=true"
-        ].map(
-          (url, index) => (
-            <img
-              key={index}
-              src={url}
-              className={`aspect-[1] object-contain w-10 absolute z-0 -translate-x-2/4 -translate-y-2/4 h-10 ${
-                index < 4 ? "mb-[319px] max-md:mb-10" : ""
-              } left-2/4 top-2/4`}
-              alt={`Map marker ${index + 1}`}
-            />
-          ),
-        )}
       </div>
     </div>
   );
