@@ -1,7 +1,8 @@
+
 import { Badge } from "@/components/ui/badge";
 import { PropertyStats } from "./PropertyStats";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Share } from "lucide-react";
 
 interface PropertyCardProps {
   id: string;
@@ -16,6 +17,7 @@ interface PropertyCardProps {
   isHot?: boolean;
   onMouseEnter?: (id: string) => void;
   onMouseLeave?: () => void;
+  showActions?: boolean; // New prop: Show fav/share row
 }
 
 export function PropertyCard({
@@ -31,6 +33,7 @@ export function PropertyCard({
   isHot = false,
   onMouseEnter,
   onMouseLeave,
+  showActions = false,
 }: PropertyCardProps) {
   const allImages = images.length > 0 ? images : [imageUrl];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -105,6 +108,16 @@ export function PropertyCard({
           {agent}
         </div>
       </div>
+      {showActions && (
+        <div className="flex justify-end items-center pb-2 px-4">
+          <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Add to favorites">
+            <Heart className="text-[#6E59A5] group-hover:text-[#BF3400] transition-colors" strokeWidth={2} size={22} />
+          </button>
+          <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Share">
+            <Share className="text-[#7E69AB] group-hover:text-[#1EAEDB] transition-colors" strokeWidth={2} size={22} />
+          </button>
+        </div>
+      )}
     </article>
   );
 }

@@ -15,6 +15,7 @@ import {
   SelectItem,
   SelectValue,
 } from "@/components/ui/select";
+import { ChevronDown, ChevronUp, ArrowDown, ArrowUp } from "lucide-react";
 
 type ViewMode = "split" | "list" | "map";
 type SortMode = "recommended" | "price" | "newest";
@@ -39,10 +40,7 @@ export default function Index() {
   // Handle filter changes
   const handleFilterChange = (newFilters: Record<string, string>) => {
     setFilters(newFilters);
-
-    // Apply filters to homes
     let filtered = [...homes];
-
     if (newFilters.price && newFilters.price !== "any") {
       if (newFilters.price.startsWith("<")) {
         const maxPrice = parseInt(newFilters.price.substring(1));
@@ -55,18 +53,15 @@ export default function Index() {
         filtered = filtered.filter((home) => home.price >= minPrice && home.price <= maxPrice);
       }
     }
-
     if (newFilters.beds && newFilters.beds !== "any") {
       if (newFilters.beds.startsWith(">")) {
         const minBeds = parseInt(newFilters.beds.substring(1));
         filtered = filtered.filter((home) => home.beds > minBeds);
       }
     }
-
     if (newFilters.homeType && newFilters.homeType !== "any") {
       filtered = filtered.filter((home) => home.type === newFilters.homeType);
     }
-
     if (newFilters.forSale && newFilters.forSale !== "for-sale") {
       if (newFilters.forSale === "sold") {
         filtered = filtered.filter((home) => home.sold === true);
@@ -76,7 +71,6 @@ export default function Index() {
         filtered = filtered.filter((home) => !home.sold && !home.forRent);
       }
     }
-
     setVisibleHomes(filtered);
   };
 
@@ -98,7 +92,6 @@ export default function Index() {
       result.sort((a, b) => b.price - a.price);
     }
     if (sortMode === "newest") {
-      // Use id or any available date for "newest". Here sorted by id descending as a stand-in.
       result.sort((a, b) => (b.id > a.id ? 1 : -1));
     }
     return result;
@@ -123,58 +116,41 @@ export default function Index() {
               } flex flex-col overflow-hidden border-r border-[#DDD]`}
             >
               <ScrollArea className="h-full hide-scrollbar">
-                {/* Filters pinned to top of left pane */}
                 <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4">
                   <FilterBar onFilterChange={handleFilterChange} />
                 </div>
                 <div className="bg-[#FAF9F8] w-full">
-                  {/* header and controls in a column with new line for results/sort/view */}
                   <div className="flex flex-col w-full px-6 pt-3 pb-3 gap-1">
                     <div className="flex items-center gap-4 text-lg leading-6 font-bold">
                       <h1 className="text-[#131313] text-ellipsis">
                         Seattle, WA homes for sale & real estate
                       </h1>
                     </div>
-                    {/* # of results, sort, view dropdown on their own line */}
-                    <div className="flex flex-wrap items-center gap-6 justify-between">
+                    {/* New row: results and sort controls */}
+                    <div className="flex flex-wrap items-center gap-6 justify-between mt-2">
                       <div className="flex gap-2 text-[#131313] text-sm font-bold leading-5 items-center">
                         <span>{visibleHomes.length}</span>
                         <span className="text-[#686868] font-normal">of</span>
                         <span>{homes.length} homes</span>
-                      </div>
-                      <div className="flex items-center gap-4 flex-wrap">
-                        {/* View Dropdown */}
-                        <div className="flex items-center gap-2 text-[#15727A] text-sm whitespace-nowrap">
-                          <span>View:</span>
-                          <Select value={viewMode} onValueChange={handleViewChange}>
-                            <SelectTrigger className="w-32 bg-white">
-                              <SelectValue>
-                                {viewMode === "split"
-                                  ? "Split View"
-                                  : viewMode === "list"
-                                  ? "List View"
-                                  : "Map View"}
-                              </SelectValue>
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="split">Split View</SelectItem>
-                              <SelectItem value="list">List View</SelectItem>
-                              <SelectItem value="map">Map View</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        {/* Sort Dropdown */}
-                        <div className="flex items-center gap-2 text-[#131313] text-sm">
-                          <span className="text-[#131313]">Sort:</span>
+                        {/* Sort as clickable text */}
+                        <div className="relative ml-4">
                           <Select value={sortMode} onValueChange={handleSortChange}>
-                            <SelectTrigger className="w-40 bg-white text-[#15727A]">
-                              <SelectValue>
-                                {sortMode === "recommended"
-                                  ? "Recommended"
-                                  : sortMode === "price"
-                                  ? "Price"
-                                  : "Newest"}
-                              </SelectValue>
+                            <SelectTrigger
+                              className="px-0 py-0 border-0 bg-transparent h-auto min-w-0 text-[#15727A] font-semibold text-sm shadow-none hover:bg-transparent focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                              style={{
+                                boxShadow: "none"
+                              }}
+                            >
+                              <div className="flex items-center gap-1 cursor-pointer select-none">
+                                <span>
+                                  {sortMode === "recommended" 
+                                    ? "Recommended"
+                                    : sortMode === "price"
+                                    ? "Price"
+                                    : "Newest"}
+                                </span>
+                                <ChevronDown className="h-4 w-4" />
+                              </div>
                             </SelectTrigger>
                             <SelectContent>
                               <SelectItem value="recommended">Recommended</SelectItem>
@@ -183,6 +159,33 @@ export default function Index() {
                             </SelectContent>
                           </Select>
                         </div>
+                      </div>
+                      {/* View Selector as clickable text */}
+                      <div className="relative">
+                        <Select value={viewMode} onValueChange={handleViewChange}>
+                          <SelectTrigger
+                            className="px-0 py-0 border-0 bg-transparent h-auto min-w-0 text-[#15727A] font-semibold text-sm shadow-none hover:bg-transparent focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                            style={{
+                              boxShadow: "none"
+                            }}
+                          >
+                            <div className="flex items-center gap-1 cursor-pointer select-none">
+                              <span>
+                                {viewMode === "split"
+                                  ? "Split View"
+                                  : viewMode === "list"
+                                  ? "List View"
+                                  : "Map View"}
+                              </span>
+                              <ChevronDown className="h-4 w-4" />
+                            </div>
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="split">Split View</SelectItem>
+                            <SelectItem value="list">List View</SelectItem>
+                            <SelectItem value="map">Map View</SelectItem>
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
                   </div>
@@ -208,6 +211,7 @@ export default function Index() {
                         isHot={home.isHot}
                         onMouseEnter={handlePropertyHover}
                         onMouseLeave={handlePropertyLeave}
+                        showActions
                       />
                     ))}
                   </div>
@@ -223,6 +227,10 @@ export default function Index() {
                   ? (showList ? 'w-full h-[40vh]' : 'w-full h-[100vh]')
                   : 'flex-1'
               } flex flex-col overflow-hidden`}
+              // Only render if "map" or "split" view active
+              style={{
+                display: viewMode === "list" ? "none" : undefined
+              }}
             >
               <MapView highlightedHomeId={highlightedHomeId} />
             </section>

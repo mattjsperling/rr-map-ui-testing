@@ -1,5 +1,5 @@
 
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Heart, Share } from "lucide-react";
 import { Home } from "@/data/types";
 import { PropertyStats } from "./PropertyStats";
 import { useState } from "react";
@@ -71,11 +71,20 @@ export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
         )}
       </div>
       
-      <div className="p-3">
+      <div className="p-3 pb-2">
         <div className="font-bold text-lg">${home.price.toLocaleString()}</div>
         <PropertyStats beds={home.beds} baths={home.baths} sqft={home.sqft} />
         <div className="text-xs mt-2 text-gray-700 truncate">{home.address}</div>
         <div className="text-xs mt-1 text-gray-500 truncate">{home.agent}</div>
+      </div>
+      {/* ACTION ICONS */}
+      <div className="flex justify-end items-center pb-2 px-3">
+        <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Add to favorites">
+          <Heart className="text-[#6E59A5] group-hover:text-[#BF3400] transition-colors" strokeWidth={2} size={22} />
+        </button>
+        <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Share">
+          <Share className="text-[#7E69AB] group-hover:text-[#1EAEDB] transition-colors" strokeWidth={2} size={22} />
+        </button>
       </div>
     </div>
   );
