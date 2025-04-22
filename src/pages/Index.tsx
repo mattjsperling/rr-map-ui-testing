@@ -8,18 +8,18 @@ import { FilterBar } from "@/components/layout/FilterBar";
 
 export default function Index() {
   return (
-    <div className="pb-[130px] max-md:pb-[100px] h-screen flex flex-col">
-      <div className="shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12),0px_1px_2px_0px_rgba(0,0,0,0.08)] bg-[#FAF9F8] w-full overflow-hidden flex-1 flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
+      <div className="shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12),0px_1px_2px_0px_rgba(0,0,0,0.08)] bg-[#FAF9F8] w-full flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="w-full flex-1 flex gap-5 max-md:flex-col">
+        <main className="w-full flex-1 flex gap-5 max-md:flex-col overflow-hidden">
           {/* Left side: scrollable */}
-          <section className="w-[44%] max-md:w-full h-full flex flex-col">
-            <ScrollArea className="h-[calc(100vh-68px)] max-md:h-auto">
+          <section className="w-[44%] max-md:w-full h-full flex flex-col overflow-hidden">
+            <ScrollArea className="h-[calc(100vh-68px)] max-md:h-[50vh]">
               {/* Filters pinned to top of left pane */}
               <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4 border-b border-[#ddd]">
                 <FilterBar />
               </div>
-              <div className="bg-[#FAF9F8] min-h-[956px] w-full overflow-hidden mx-auto">
+              <div className="bg-[#FAF9F8] w-full">
                 <div className="items-center content-center flex-wrap border-b-[color:var(--color-border-divider,#DDD)] bg-[#FAF9F8] flex w-full gap-6 font-bold pt-3 pb-6 px-6 border-b border-solid">
                   <div className="items-center self-stretch flex min-w-60 w-full gap-4 flex-wrap flex-1 shrink basis-[0%] my-auto">
                     <h1 className="text-[#131313] text-ellipsis text-lg leading-6 self-stretch flex-1 shrink basis-[0%] my-auto">
@@ -41,7 +41,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden flex-1 h-full p-4">
+                <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden p-4">
                   <div className="flex min-w-60 w-[792px] items-center gap-[40px_100px] text-sm font-bold leading-5 justify-between flex-wrap">
                     <div className="self-stretch flex gap-1 text-[#131313]">
                       <span>40</span>
@@ -105,13 +105,13 @@ export default function Index() {
             </ScrollArea>
           </section>
           {/* Right side: fixed */}
-          <section className="w-[56%] ml-5 max-md:w-full max-md:ml-0 h-[calc(100vh-68px)] flex flex-col">
+          <section className="w-[56%] max-md:w-full max-md:ml-0 h-[calc(100vh-68px)] flex flex-col overflow-hidden">
             <MapView />
           </section>
         </main>
       </div>
       {/* Map pins overlay */}
-      <div className="relative z-10 flex mt-[-569px] w-[484px] max-w-full flex-col ml-[324px] max-md:mt-[-200px] pointer-events-none">
+      <div className="absolute z-10 flex mt-[100px] w-[484px] max-w-full flex-col ml-[324px] max-md:mt-0 pointer-events-none">
         {[
           "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/3e90b401-20b2-4578-9e68-f20f39df6ea7?placeholderIfAbsent=true",
           "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/550c9fde-ba61-46f2-9793-8fdc2c3e11cf?placeholderIfAbsent=true",
