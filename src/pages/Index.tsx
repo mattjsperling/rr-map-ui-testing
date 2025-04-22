@@ -78,7 +78,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[60vh]'
-                : 'w-full lg:w-[70%] xl:w-[73%] 2xl:w-[78%]'
+                : 'w-full max-w-[900px] min-w-[440px] flex-shrink-0'
             } flex flex-col overflow-hidden border-r border-[#DDD]`}
           >
             <ScrollArea className="h-full hide-scrollbar">
@@ -123,7 +123,12 @@ export default function Index() {
                   </div>
                 </div>
                 {/* Property cards grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3 pb-6 auto-rows-fr">
+                <div
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3 pb-6 auto-rows-fr justify-center"
+                  style={{
+                    justifyItems: "center"
+                  }}
+                >
                   {visibleHomes.map((home) => (
                     <PropertyCard
                       key={home.id}
@@ -150,7 +155,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[40vh]'
-                : 'w-full lg:w-[30%] xl:w-[27%] 2xl:w-[22%]'
+                : 'flex-1'
             } flex flex-col overflow-hidden`}
           >
             <MapView highlightedHomeId={highlightedHomeId} />
