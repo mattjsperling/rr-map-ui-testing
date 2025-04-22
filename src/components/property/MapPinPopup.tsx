@@ -1,7 +1,8 @@
 
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Home } from "@/data/homes";
 import { PropertyStats } from "./PropertyStats";
+import { useState } from "react";
 
 interface MapPinPopupProps {
   home: Home;
@@ -9,6 +10,19 @@ interface MapPinPopupProps {
 }
 
 export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
+  const images = home.images || [home.imageUrl];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="absolute z-50 bg-white rounded-xl shadow-lg w-72 overflow-hidden transform -translate-x-1/2 -translate-y-full mt-[-10px]">
       <button
@@ -24,10 +38,30 @@ export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
       
       <div className="relative h-40 w-full">
         <img
-          src={home.imageUrl}
+          src={images[currentImageIndex]}
           alt={home.address}
           className="absolute h-full w-full object-cover"
         />
+        
+        {images.length > 1 && (
+          <>
+            <button 
+              onClick={prevImage} 
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 rounded-full p-1"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            <button 
+              onClick={nextImage} 
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 rounded-full p-1"
+              aria-label="Next image"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </>
+        )}
+        
         {home.isHot && (
           <div className="absolute top-2 left-2">
             <span className="bg-[#BF3400] text-white text-xs px-2 py-1 rounded-md font-bold">

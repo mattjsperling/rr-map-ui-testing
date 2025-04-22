@@ -1,9 +1,13 @@
 
 import { Badge } from "@/components/ui/badge";
 import { PropertyStats } from "./PropertyStats";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PropertyCardProps {
+  id: string;
   imageUrl: string;
+  images?: string[];
   price: number;
   beds: number;
   baths: number;
@@ -11,10 +15,14 @@ interface PropertyCardProps {
   address: string;
   agent: string;
   isHot?: boolean;
+  onMouseEnter?: (id: string) => void;
+  onMouseLeave?: () => void;
 }
 
 export function PropertyCard({
+  id,
   imageUrl,
+  images = [],
   price,
   beds,
   baths,
@@ -22,15 +30,54 @@ export function PropertyCard({
   address,
   agent,
   isHot = false,
+  onMouseEnter,
+  onMouseLeave,
 }: PropertyCardProps) {
+  const allImages = images.length > 0 ? images : [imageUrl];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  };
+
   return (
-    <article className="min-w-[348px] bg-white overflow-hidden flex-1 shrink basis-[0%] rounded-xl">
+    <article 
+      className="min-w-[348px] bg-white overflow-hidden flex-1 shrink basis-[0%] rounded-xl property-card"
+      onMouseEnter={() => onMouseEnter?.(id)}
+      onMouseLeave={() => onMouseLeave?.()}
+    >
       <div className="flex flex-col overflow-hidden relative aspect-[1.498] w-full">
         <img
-          src={imageUrl}
+          src={allImages[currentImageIndex]}
           alt={address}
-          className="absolute h-full w-full object-cover inset-0"
+          className="absolute h-full w-full object-cover inset-0 transition-opacity duration-300"
         />
+        
+        {allImages.length > 1 && (
+          <>
+            <button 
+              onClick={prevImage} 
+              className="carousel-arrow carousel-arrow-left"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={nextImage} 
+              className="carousel-arrow carousel-arrow-right"
+              aria-label="Next image"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </>
+        )}
+        
         {isHot && (
           <div className="absolute items-center content-center flex-wrap z-0 flex w-full max-w-[372px] gap-2 top-2 inset-x-2">
             <Badge className="bg-[#BF3400] text-white font-bold">HOT HOME</Badge>

@@ -101,6 +101,16 @@
   }
 }
 
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
 /* Mapbox custom styles */
 .mapboxgl-ctrl-logo,
 .mapboxgl-ctrl-bottom-right,
@@ -140,4 +150,53 @@
 
 #map-popup-container > div {
   pointer-events: auto;
+}
+
+/* Hover effects for property cards */
+.property-card {
+  transition: all 0.3s ease;
+}
+
+.property-card:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Carousel navigation arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.property-card:hover .carousel-arrow {
+  opacity: 1;
+}
+
+.carousel-arrow-left {
+  left: 10px;
+}
+
+.carousel-arrow-right {
+  right: 10px;
+}
+
+/* Highlighted map pin */
+.price-marker.active {
+  z-index: 3;
+}
+
+.price-marker.active .marker-content {
+  background-color: #C82021 !important;
 }
