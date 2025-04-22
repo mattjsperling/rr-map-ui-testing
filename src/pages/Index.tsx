@@ -76,7 +76,13 @@ export default function Index() {
         <Header />
         <main className="w-full flex-1 flex flex-col lg:flex-row overflow-hidden">
           {/* Left side: scrollable */}
-          <section className={`${isMobile ? 'w-full h-[60vh]' : 'w-full lg:w-[42%]'} flex flex-col overflow-hidden border-r border-[#DDD]`}>
+          <section
+            className={`${
+              isMobile
+                ? 'w-full h-[60vh]'
+                : 'w-full lg:w-[50%] xl:w-[54%] 2xl:w-[58%]'
+            } flex flex-col overflow-hidden border-r border-[#DDD]`}
+          >
             <ScrollArea className="h-full hide-scrollbar">
               {/* Filters pinned to top of left pane */}
               <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4">
@@ -84,18 +90,20 @@ export default function Index() {
               </div>
               <div className="bg-[#FAF9F8] w-full">
                 {/* header and controls in a row */}
-                <div className="flex w-full px-6 pt-3 pb-3 border-b border-[#DDD] items-center justify-between">
-                  <h1 className="text-[#131313] text-ellipsis text-lg leading-6 font-bold">
-                    Seattle, WA homes for sale & real estate
-                  </h1>
-                  <div className="flex items-center gap-4 text-sm whitespace-nowrap leading-5 ml-4">
-                    <span className="text-[#131313]">View:</span>
-                    <div className="flex items-center text-[#15727A]">
-                      <span>Split</span>
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
-                        className="aspect-[1] object-contain w-6"
-                      />
+                <div className="flex w-full px-6 pt-3 pb-3 items-center justify-between">
+                  <div className="flex items-center gap-4 text-lg leading-6 font-bold">
+                    <h1 className="text-[#131313] text-ellipsis">
+                      Seattle, WA homes for sale & real estate
+                    </h1>
+                    <div className="flex items-center gap-2 text-[#15727A] text-sm whitespace-nowrap ml-4">
+                      <span>View:</span>
+                      <div className="flex items-center gap-1">
+                        <span>Split</span>
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
+                          className="aspect-[1] object-contain w-6"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -106,9 +114,9 @@ export default function Index() {
                     <span className="text-[#686868] font-normal">of</span>
                     <span>{homes.length} homes</span>
                   </div>
-                  <div className="flex items-center gap-1 ml-4 whitespace-nowrap text-sm">
+                  <div className="flex items-center gap-2 whitespace-nowrap text-sm ml-4">
                     <span className="text-[#131313]">Sort:</span>
-                    <div className="flex items-center text-[#15727A]">
+                    <div className="flex items-center text-[#15727A] gap-1">
                       <span>Recommended</span>
                       <img
                         src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
@@ -159,7 +167,13 @@ export default function Index() {
             </ScrollArea>
           </section>
           {/* Right side: fixed */}
-          <section className={`${isMobile ? 'w-full h-[40vh]' : 'w-full lg:w-[58%]'} flex flex-col overflow-hidden`}>
+          <section
+            className={`${
+              isMobile
+                ? 'w-full h-[40vh]'
+                : 'w-full lg:w-[50%] xl:w-[46%] 2xl:w-[42%]'
+            } flex flex-col overflow-hidden`}
+          >
             <MapView highlightedHomeId={highlightedHomeId} />
           </section>
         </main>
