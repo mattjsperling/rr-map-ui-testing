@@ -1,23 +1,5 @@
-export interface Home {
-  id: string;
-  imageUrl: string;
-  images?: string[];
-  price: number;
-  beds: number;
-  baths: number;
-  sqft: number;
-  address: string;
-  lat: number;
-  lng: number;
-  agent: string;
-  isHot?: boolean;
-  isForeclosure?: boolean;
-  type?: string;
-  sold?: boolean;
-  forRent?: boolean;
-}
+import { Home } from "./types";
 
-// Each home now has unique, real home photos (exterior first, then interiors)
 export const homes: Home[] = [
   {
     id: "1",
@@ -298,19 +280,4 @@ export const homes: Home[] = [
     id: "15",
     imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=2070&q=80", // bedroom
-      "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=2070&q=80" // bath
-    ],
-    price: 1100000,
-    beds: 4,
-    baths: 2.5,
-    sqft: 2400,
-    address: "555 15th Ave E, Seattle, WA 98112",
-    lat: 47.625610,
-    lng: -122.312614,
-    agent: "David Parker · Coldwell Banker Bain"
-  }
-];
+      "https://images.unsplash.com/photo-15721203

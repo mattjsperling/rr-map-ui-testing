@@ -3,9 +3,9 @@ import { MapView } from "@/components/layout/MapView";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FilterBar } from "@/components/layout/FilterBar";
-import { homes } from "@/data/homes";
+import { homes } from "@/data/homesData";
 import { useState } from "react";
-import { Home } from "@/data/homes";
+import { Home } from "@/data/types";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Index() {
@@ -78,7 +78,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[60vh]'
-                : 'w-full lg:w-[62%] xl:w-[68%] 2xl:w-[74%]'
+                : 'w-full lg:w-[70%] xl:w-[73%] 2xl:w-[78%]'
             } flex flex-col overflow-hidden border-r border-[#DDD]`}
           >
             <ScrollArea className="h-full hide-scrollbar">
@@ -123,7 +123,7 @@ export default function Index() {
                   </div>
                 </div>
                 {/* Property cards grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 pb-6 auto-rows-fr">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3 pb-6 auto-rows-fr">
                   {visibleHomes.map((home) => (
                     <PropertyCard
                       key={home.id}
@@ -150,7 +150,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[40vh]'
-                : 'w-full lg:w-[38%] xl:w-[32%] 2xl:w-[26%]'
+                : 'w-full lg:w-[30%] xl:w-[27%] 2xl:w-[22%]'
             } flex flex-col overflow-hidden`}
           >
             <MapView highlightedHomeId={highlightedHomeId} />

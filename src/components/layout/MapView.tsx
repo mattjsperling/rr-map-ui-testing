@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -155,7 +154,8 @@ export function MapView({ highlightedHomeId, onMarkerClick }: MapViewProps) {
     if (!map.current || !popupCoords) return null;
     
     const point = map.current.project(new mapboxgl.LngLat(popupCoords[0], popupCoords[1]));
-    return { left: point.x, top: point.y };
+    // Add offset: move popup left by 100px, up by 120px for better visibility beside pin
+    return { left: point.x + 30, top: point.y - 150 };
   };
 
   const screenCoords = getScreenCoords();

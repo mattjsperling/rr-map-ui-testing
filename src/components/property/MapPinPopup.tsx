@@ -1,6 +1,6 @@
 
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Home } from "@/data/homes";
+import { Home } from "@/data/types";
 import { PropertyStats } from "./PropertyStats";
 import { useState } from "react";
 
