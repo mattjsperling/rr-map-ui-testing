@@ -33,7 +33,7 @@ export function PropertyCard({
         />
         {isHot && (
           <div className="absolute items-center content-center flex-wrap z-0 flex w-full max-w-[372px] gap-2 top-2 inset-x-2">
-            <Badge variant="hot">HOT HOME</Badge>
+            <Badge className="bg-[#BF3400] text-white font-bold">HOT HOME</Badge>
           </div>
         )}
         <div className="relative z-0 w-full overflow-hidden">

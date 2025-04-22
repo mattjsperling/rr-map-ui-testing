@@ -31,8 +31,8 @@ export function AdCard({
               alt={address}
               className="absolute h-full w-full object-cover inset-0"
             />
-            <Badge variant="ad">AD</Badge>
-            <Badge variant="foreclosure">FORECLOSURE</Badge>
+            <Badge className="bg-white text-[#222] font-bold">AD</Badge>
+            <Badge className="bg-[#A927BE] text-white font-bold">FORECLOSURE</Badge>
           </div>
         </div>
         <div className="items-stretch flex w-full flex-col text-sm text-[#222] font-normal leading-5 justify-center gap-2 p-4">
