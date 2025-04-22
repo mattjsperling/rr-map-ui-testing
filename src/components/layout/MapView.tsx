@@ -1,10 +1,11 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { homes } from '@/data/homes';
+import { homes } from '@/data/homesData'; // Updated import path
 import { MapPinPopup } from '../property/MapPinPopup';
 import { createPortal } from 'react-dom';
-import { Home } from '@/data/homes';
+import { Home } from '@/data/types'; // Updated import path
 import { useIsMobile } from '@/hooks/use-mobile';
 
 // Initialize mapbox
