@@ -1,16 +1,19 @@
+
 import { Header } from "@/components/layout/Header";
 import { MapView } from "@/components/layout/MapView";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { AdCard } from "@/components/property/AdCard";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Index() {
   return (
-    <div className="pb-[130px] max-md:pb-[100px]">
-      <div className="shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12),0px_1px_2px_0px_rgba(0,0,0,0.08)] bg-[#FAF9F8] w-full overflow-hidden">
+    <div className="pb-[130px] max-md:pb-[100px] h-screen flex flex-col">
+      <div className="shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12),0px_1px_2px_0px_rgba(0,0,0,0.08)] bg-[#FAF9F8] w-full overflow-hidden flex-1 flex flex-col">
         <Header />
-        <main className="w-full">
-          <div className="gap-5 flex max-md:flex-col">
-            <section className="w-[44%] max-md:w-full">
+        <main className="w-full flex-1 flex gap-5 max-md:flex-col">
+          {/* Left side: scrollable */}
+          <section className="w-[44%] max-md:w-full h-full flex flex-col">
+            <ScrollArea className="h-[calc(100vh-68px)] max-md:h-auto">
               <div className="bg-[#FAF9F8] min-h-[956px] w-full overflow-hidden mt-[68px] mx-auto max-md:mt-10">
                 <div className="items-center content-center flex-wrap border-b-[color:var(--color-border-divider,#DDD)] bg-[#FAF9F8] flex w-full gap-6 font-bold pt-3 pb-6 px-6 border-b border-solid">
                   <div className="items-center self-stretch flex min-w-60 w-full gap-4 flex-wrap flex-1 shrink basis-[0%] my-auto">
@@ -96,16 +99,24 @@ export default function Index() {
                   />
                 </div>
               </div>
-            </section>
-
-            <section className="w-[56%] ml-5 max-md:w-full max-md:ml-0">
-              <MapView />
-            </section>
-          </div>
+            </ScrollArea>
+          </section>
+          {/* Right side: fixed */}
+          <section className="w-[56%] ml-5 max-md:w-full max-md:ml-0 h-[calc(100vh-68px)] flex flex-col">
+            <MapView />
+          </section>
         </main>
       </div>
-      <div className="relative z-10 flex mt-[-569px] w-[484px] max-w-full flex-col ml-[324px] max-md:mt-[-200px]">
-        {["https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/3e90b401-20b2-4578-9e68-f20f39df6ea7?placeholderIfAbsent=true", "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/550c9fde-ba61-46f2-9793-8fdc2c3e11cf?placeholderIfAbsent=true", "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/c2f72068-b349-4337-9ec1-a6a8e01e1d5a?placeholderIfAbsent=true", "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/44f1b35c-1c85-4782-b120-25a84bf07962?placeholderIfAbsent=true", "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/abab5c0a-3fda-4d8f-9d7d-7b9e69a94049?placeholderIfAbsent=true", "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a0467258-f8e6-4d4d-abb1-27283f3ad9dc?placeholderIfAbsent=true"].map(
+      {/* Map pins overlay */}
+      <div className="relative z-10 flex mt-[-569px] w-[484px] max-w-full flex-col ml-[324px] max-md:mt-[-200px] pointer-events-none">
+        {[
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/3e90b401-20b2-4578-9e68-f20f39df6ea7?placeholderIfAbsent=true",
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/550c9fde-ba61-46f2-9793-8fdc2c3e11cf?placeholderIfAbsent=true",
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/c2f72068-b349-4337-9ec1-a6a8e01e1d5a?placeholderIfAbsent=true",
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/44f1b35c-1c85-4782-b120-25a84bf07962?placeholderIfAbsent=true",
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/abab5c0a-3fda-4d8f-9d7d-7b9e69a94049?placeholderIfAbsent=true",
+          "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a0467258-f8e6-4d4d-abb1-27283f3ad9dc?placeholderIfAbsent=true"
+        ].map(
           (url, index) => (
             <img
               key={index}
