@@ -1,4 +1,5 @@
-import { Badge } from "@/components/ui/Badge";
+
+import { Badge } from "@/components/ui/badge";
 import { PropertyStats } from "./PropertyStats";
 
 interface PropertyCardProps {
