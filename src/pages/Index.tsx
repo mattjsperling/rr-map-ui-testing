@@ -223,9 +223,6 @@ export default function Index() {
                   ? (showList ? 'w-full h-[40vh]' : 'w-full h-[100vh]')
                   : 'flex-1'
               } flex flex-col overflow-hidden`}
-              style={{
-                display: viewMode === "list" ? "none" : undefined // Hide map in List view
-              }}
             >
               <MapView highlightedHomeId={highlightedHomeId} />
             </section>
@@ -235,4 +232,3 @@ export default function Index() {
     </div>
   );
 }
-
