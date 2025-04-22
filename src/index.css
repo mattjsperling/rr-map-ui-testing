@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -102,13 +101,14 @@
 }
 
 /* Hide scrollbar but keep functionality */
-.hide-scrollbar {
+.hide-scrollbar,
+.hide-scrollbar * {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none !important;  /* Firefox */
 }
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
+.hide-scrollbar::-webkit-scrollbar,
+.hide-scrollbar *::-webkit-scrollbar {
+  display: none !important;  /* Chrome, Safari, Opera */
 }
 
 /* Mapbox custom styles */
@@ -154,12 +154,12 @@
 
 /* Hover effects for property cards */
 .property-card {
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
 .property-card:hover {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px) scale(1.01);
 }
 
 /* Carousel navigation arrows */
@@ -181,7 +181,8 @@
 }
 
 .property-card:hover .carousel-arrow {
-  opacity: 1;
+  opacity: 1 !important;
+  pointer-events: auto;
 }
 
 .carousel-arrow-left {

@@ -58,7 +58,6 @@ export function PropertyCard({
           alt={address}
           className="absolute h-full w-full object-cover inset-0 transition-opacity duration-300"
         />
-        
         {allImages.length > 1 && (
           <>
             <button 

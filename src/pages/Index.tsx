@@ -27,45 +27,44 @@ export default function Index() {
   // Handle filter changes
   const handleFilterChange = (newFilters: Record<string, string>) => {
     setFilters(newFilters);
-    
+
     // Apply filters to homes
-    // This is a simple implementation - could be expanded for more complex filtering
     let filtered = [...homes];
-    
-    if (newFilters.price && newFilters.price !== 'any') {
-      if (newFilters.price.startsWith('<')) {
+
+    if (newFilters.price && newFilters.price !== "any") {
+      if (newFilters.price.startsWith("<")) {
         const maxPrice = parseInt(newFilters.price.substring(1));
-        filtered = filtered.filter(home => home.price < maxPrice);
-      } else if (newFilters.price.startsWith('>')) {
+        filtered = filtered.filter((home) => home.price < maxPrice);
+      } else if (newFilters.price.startsWith(">")) {
         const minPrice = parseInt(newFilters.price.substring(1));
-        filtered = filtered.filter(home => home.price > minPrice);
-      } else if (newFilters.price.includes('-')) {
-        const [minPrice, maxPrice] = newFilters.price.split('-').map(p => parseInt(p));
-        filtered = filtered.filter(home => home.price >= minPrice && home.price <= maxPrice);
+        filtered = filtered.filter((home) => home.price > minPrice);
+      } else if (newFilters.price.includes("-")) {
+        const [minPrice, maxPrice] = newFilters.price.split("-").map((p) => parseInt(p));
+        filtered = filtered.filter((home) => home.price >= minPrice && home.price <= maxPrice);
       }
     }
-    
-    if (newFilters.beds && newFilters.beds !== 'any') {
-      if (newFilters.beds.startsWith('>')) {
+
+    if (newFilters.beds && newFilters.beds !== "any") {
+      if (newFilters.beds.startsWith(">")) {
         const minBeds = parseInt(newFilters.beds.substring(1));
-        filtered = filtered.filter(home => home.beds > minBeds);
+        filtered = filtered.filter((home) => home.beds > minBeds);
       }
     }
-    
-    if (newFilters.homeType && newFilters.homeType !== 'any') {
-      filtered = filtered.filter(home => home.type === newFilters.homeType);
+
+    if (newFilters.homeType && newFilters.homeType !== "any") {
+      filtered = filtered.filter((home) => home.type === newFilters.homeType);
     }
-    
-    if (newFilters.forSale && newFilters.forSale !== 'for-sale') {
-      if (newFilters.forSale === 'sold') {
-        filtered = filtered.filter(home => home.sold === true);
-      } else if (newFilters.forSale === 'for-rent') {
-        filtered = filtered.filter(home => home.forRent === true);
+
+    if (newFilters.forSale && newFilters.forSale !== "for-sale") {
+      if (newFilters.forSale === "sold") {
+        filtered = filtered.filter((home) => home.sold === true);
+      } else if (newFilters.forSale === "for-rent") {
+        filtered = filtered.filter((home) => home.forRent === true);
       } else {
-        filtered = filtered.filter(home => !home.sold && !home.forRent);
+        filtered = filtered.filter((home) => !home.sold && !home.forRent);
       }
     }
-    
+
     setVisibleHomes(filtered);
   };
 
@@ -78,51 +77,49 @@ export default function Index() {
           <section className="w-[44%] max-md:w-full h-full flex flex-col overflow-hidden">
             <ScrollArea className="h-[calc(100vh-68px)] max-md:h-[50vh] hide-scrollbar">
               {/* Filters pinned to top of left pane */}
-              <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4 border-b border-[#ddd]">
+              <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4">
                 <FilterBar onFilterChange={handleFilterChange} />
               </div>
               <div className="bg-[#FAF9F8] w-full">
-                <div className="items-center content-center flex-wrap border-b-[color:var(--color-border-divider,#DDD)] bg-[#FAF9F8] flex w-full px-6 pt-3 pb-6 border-b border-solid">
-                  <div className="items-center self-stretch flex min-w-60 w-full gap-4 flex-wrap justify-between">
-                    <h1 className="text-[#131313] text-ellipsis text-lg leading-6 self-stretch flex-1 shrink basis-[0%] my-auto">
-                      Seattle, WA homes for sale & real estate
-                    </h1>
-                    <div className="items-center self-stretch flex text-sm whitespace-nowrap leading-5 my-auto">
-                      <div className="items-center self-stretch flex gap-4 my-auto">
-                        <div className="items-center self-stretch flex gap-1 my-auto">
-                          <span className="text-[#131313]">View:</span>
-                          <div className="self-stretch flex items-center text-[#15727A]">
-                            <span>Split</span>
-                            <img
-                              src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
-                              className="aspect-[1] object-contain w-6"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="items-center self-stretch flex gap-1 ml-6 whitespace-nowrap">
-                        <span className="text-[#131313]">Sort:</span>
-                        <div className="self-stretch flex items-center text-[#15727A]">
-                          <span>Recommended</span>
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
-                            className="aspect-[1] object-contain w-6"
-                          />
-                        </div>
-                      </div>
+                {/* header and controls in a row */}
+                <div className="flex w-full px-6 pt-3 pb-3 border-b border-[#DDD] items-center justify-between">
+                  <h1 className="text-[#131313] text-ellipsis text-lg leading-6 flex-1 font-bold">
+                    Seattle, WA homes for sale & real estate
+                  </h1>
+                  <div className="flex items-center gap-4 text-sm whitespace-nowrap leading-5">
+                    <span className="text-[#131313]">View:</span>
+                    <div className="flex items-center text-[#15727A]">
+                      <span>Split</span>
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
+                        className="aspect-[1] object-contain w-6"
+                      />
                     </div>
                   </div>
                 </div>
-                <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden p-4">
-                  <div className="flex min-w-60 w-[792px] items-center gap-[40px_100px] text-sm font-bold leading-5 justify-between flex-wrap">
-                    <div className="self-stretch flex gap-1 text-[#131313]">
-                      <span>{visibleHomes.length}</span>
-                      <span className="text-[#686868] font-normal">of</span>
-                      <span>{homes.length} homes</span>
+                {/* number of results and sort row */}
+                <div className="flex w-full px-6 pb-6 border-b border-[#DDD] items-center justify-between">
+                  <div className="flex gap-1 text-[#131313] text-sm font-bold leading-5 items-center">
+                    <span>{visibleHomes.length}</span>
+                    <span className="text-[#686868] font-normal">of</span>
+                    <span>{homes.length} homes</span>
+                  </div>
+                  <div className="flex items-center gap-1 ml-6 whitespace-nowrap text-sm">
+                    <span className="text-[#131313]">Sort:</span>
+                    <div className="flex items-center text-[#15727A]">
+                      <span>Recommended</span>
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
+                        className="aspect-[1] object-contain w-6"
+                      />
                     </div>
                   </div>
-                  
-                  {/* Property + ad cards */}
+                </div>
+                {/* Property + ad cards */}
+                <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden p-4">
+                  <div className="flex min-w-60 w-[792px] items-center gap-[40px_100px] text-sm font-bold leading-5 justify-between flex-wrap">
+                    {/* This block was a duplicate, removed */}
+                  </div>
                   {visibleHomes.map((home, index) => {
                     // Every third home is an ad
                     if ((index + 1) % 3 === 0 && home.isForeclosure) {
@@ -139,7 +136,7 @@ export default function Index() {
                         />
                       );
                     }
-                    
+
                     return (
                       <PropertyCard
                         key={home.id}

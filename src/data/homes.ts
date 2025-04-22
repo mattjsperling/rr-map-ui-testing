@@ -20,11 +20,11 @@ export interface Home {
 export const homes: Home[] = [
   {
     id: "1",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea"
+      "https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&q=80",
     ],
     price: 799000,
     beds: 3,
@@ -39,11 +39,11 @@ export const homes: Home[] = [
   },
   {
     id: "2",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     ],
     price: 650000,
     beds: 2,
@@ -57,11 +57,11 @@ export const homes: Home[] = [
   },
   {
     id: "3",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    imageUrl: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=600&q=80",
     ],
     price: 1250000,
     beds: 4,
@@ -75,11 +75,11 @@ export const homes: Home[] = [
   },
   {
     id: "4",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    imageUrl: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80",
     ],
     price: 875000,
     beds: 3,
@@ -93,11 +93,11 @@ export const homes: Home[] = [
   },
   {
     id: "5",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=600&q=80",
     ],
     price: 1100000,
     beds: 4,
@@ -110,11 +110,11 @@ export const homes: Home[] = [
   },
   {
     id: "6",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    imageUrl: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=600&q=80",
     ],
     price: 749000,
     beds: 3,
@@ -127,11 +127,11 @@ export const homes: Home[] = [
   },
   {
     id: "7",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    imageUrl: "https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+      "https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1583608225688-84943c4af799?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
+      "https://images.unsplash.com/photo-1560185893-a55cbc970c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 925000,
     beds: 3,
@@ -145,11 +145,11 @@ export const homes: Home[] = [
   },
   {
     id: "8",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1583608225688-84943c4af799?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1583608225688-84943c4af799?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
+      "https://images.unsplash.com/photo-1560185893-a55cbc970c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 580000,
     beds: 2,
@@ -162,11 +162,11 @@ export const homes: Home[] = [
   },
   {
     id: "9",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    imageUrl: "https://images.unsplash.com/photo-1560185893-a55cbc970c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1560185893-a55cbc970c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1583608225688-84943c4af799?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
     ],
     price: 1500000,
     beds: 5,
@@ -180,11 +180,11 @@ export const homes: Home[] = [
   },
   {
     id: "10",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    imageUrl: "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 850000,
     beds: 3,
@@ -197,11 +197,11 @@ export const homes: Home[] = [
   },
   {
     id: "11",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 1050000,
     beds: 4,
@@ -215,11 +215,11 @@ export const homes: Home[] = [
   },
   {
     id: "12",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 725000,
     beds: 3,
@@ -232,11 +232,11 @@ export const homes: Home[] = [
   },
   {
     id: "13",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 975000,
     beds: 3,
@@ -250,11 +250,11 @@ export const homes: Home[] = [
   },
   {
     id: "14",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 625000,
     beds: 2,
@@ -267,11 +267,11 @@ export const homes: Home[] = [
   },
   {
     id: "15",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 1350000,
     beds: 4,
@@ -285,11 +285,11 @@ export const homes: Home[] = [
   },
   {
     id: "16",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    imageUrl: "https://images.unsplash.com/photo-1564019670739-55988ea34917?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+      "https://images.unsplash.com/photo-1564019670739-55988ea34917?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1556912173-ca9373b7a9c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ],
     price: 890000,
     beds: 3,
@@ -302,71 +302,8 @@ export const homes: Home[] = [
   },
   {
     id: "17",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    imageUrl: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
-    ],
-    price: 1200000,
-    beds: 4,
-    baths: 3,
-    sqft: 2800,
-    address: "234 36th Ave E, Seattle, WA 98112",
-    lat: 47.620300,
-    lng: -122.287600,
-    agent: "Amanda White · Redfin",
-    isHot: true
-  },
-  {
-    id: "18",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-    images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
-    ],
-    price: 699000,
-    beds: 3,
-    baths: 1.5,
-    sqft: 1500,
-    address: "789 N 50th St, Seattle, WA 98103",
-    lat: 47.665700,
-    lng: -122.338990,
-    agent: "Jason Thompson · Windermere Real Estate"
-  },
-  {
-    id: "19",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-    images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
-    ],
-    price: 995000,
-    beds: 3,
-    baths: 2.5,
-    sqft: 2250,
-    address: "123 E Galer St, Seattle, WA 98102",
-    lat: 47.632850,
-    lng: -122.321150,
-    agent: "Emily Davis · Compass Real Estate"
-  },
-  {
-    id: "20",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-    images: [
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
-      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
-    ],
-    price: 575000,
-    beds: 2,
-    baths: 1,
-    sqft: 1000,
-    address: "456 N 46th St, Seattle, WA 98103",
-    lat: 47.662100,
-    lng: -122.347300,
-    agent: "Kevin Nelson · John L. Scott"
-  }
-];
+      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1556912173-ca9373b7a9c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1564019670739-55988ea34917?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYW
