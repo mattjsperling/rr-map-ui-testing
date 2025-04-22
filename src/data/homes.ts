@@ -1,3 +1,4 @@
+
 export interface Home {
   id: string;
   imageUrl: string;
@@ -306,4 +307,16 @@ export const homes: Home[] = [
     images: [
       "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1556912173-ca9373b7a9c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1564019670739-55988ea34917?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYW
+      "https://images.unsplash.com/photo-1564019670739-55988ea34917?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    ],
+    price: 1100000,
+    beds: 4,
+    baths: 2.5,
+    sqft: 2400,
+    address: "789 Lake Washington Blvd E, Seattle, WA 98112",
+    lat: 47.619486,
+    lng: -122.290392,
+    agent: "Amanda Robinson · Windermere Real Estate",
+    type: "house"
+  }
+]

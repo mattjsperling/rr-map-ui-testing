@@ -6,6 +6,7 @@ import { homes } from '@/data/homes';
 import { MapPinPopup } from '../property/MapPinPopup';
 import { createPortal } from 'react-dom';
 import { Home } from '@/data/homes';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Initialize mapbox
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dHNwZXJsaW5ncmVkZmluIiwiYSI6ImNtODZkZzZ3dDAzZHUybHE1NDJ4YnJ6cmkifQ.2DclNy9docVaGwLrD91F7g';
@@ -21,6 +22,7 @@ export function MapView({ highlightedHomeId, onMarkerClick }: MapViewProps) {
   const markersRef = useRef<{ [id: string]: mapboxgl.Marker }>({});
   const markerElementsRef = useRef<{ [id: string]: HTMLElement }>({});
   const popupRef = useRef<HTMLDivElement | null>(null);
+  const isMobile = useIsMobile();
   
   const [selectedHome, setSelectedHome] = useState<Home | null>(null);
   const [popupCoords, setPopupCoords] = useState<[number, number] | null>(null);
@@ -158,14 +160,23 @@ export function MapView({ highlightedHomeId, onMarkerClick }: MapViewProps) {
 
   const screenCoords = getScreenCoords();
 
+  // Resize map when viewport changes
+  useEffect(() => {
+    if (map.current) {
+      setTimeout(() => {
+        map.current?.resize();
+      }, 100);
+    }
+  }, [isMobile]);
+
   return (
-    <div className="grow overflow-hidden font-normal w-full">
-      {/* Map container - removed extra controls */}
-      <div className="w-full h-[calc(100vh-68px)] relative">
+    <div className="grow overflow-hidden font-normal w-full h-full">
+      {/* Map container */}
+      <div className="w-full h-full relative">
         <div ref={mapContainer} className="absolute inset-0" />
         
         {/* Map tools overlay */}
-        <div className="absolute items-center flex left-4 top-[16px] w-12 flex-col text-[10px] text-[#131313] whitespace-nowrap leading-[1.6] gap-4 z-10">
+        <div className="absolute items-center flex left-4 top-4 w-12 flex-col text-[10px] text-[#131313] whitespace-nowrap leading-[1.6] gap-4 z-10">
           <div className="w-full gap-4">
             <button className="justify-center items-center shadow-[0px_4px_16px_0px_rgba(0,0,0,0.12),0px_1px_4px_0px_rgba(0,0,0,0.08)] bg-[#FEFEFE] flex min-h-12 w-full flex-col h-12 rounded-md">
               <img src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/3dad50c5bcfd7422ea7e634e2fec296b2e91faa1?placeholderIfAbsent=true" className="aspect-[1] object-contain w-6" />

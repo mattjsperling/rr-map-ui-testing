@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -155,6 +156,19 @@
 /* Hover effects for property cards */
 .property-card {
   transition: box-shadow 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .property-card {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .property-card {
+    width: calc(100% - 0.5rem);
+  }
 }
 
 .property-card:hover {
@@ -200,4 +214,11 @@
 
 .price-marker.active .marker-content {
   background-color: #C82021 !important;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 1023px) {
+  .hide-scrollbar {
+    overflow-x: hidden;
+  }
 }

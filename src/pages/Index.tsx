@@ -8,11 +8,13 @@ import { FilterBar } from "@/components/layout/FilterBar";
 import { homes } from "@/data/homes";
 import { useState } from "react";
 import { Home } from "@/data/homes";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Index() {
   const [highlightedHomeId, setHighlightedHomeId] = useState<string | null>(null);
   const [filters, setFilters] = useState<Record<string, string>>({});
   const [visibleHomes, setVisibleHomes] = useState<Home[]>(homes);
+  const isMobile = useIsMobile();
 
   // Handle hover on property card
   const handlePropertyHover = (id: string) => {
@@ -72,10 +74,10 @@ export default function Index() {
     <div className="h-screen flex flex-col overflow-hidden">
       <div className="shadow-[0px_2px_6px_0px_rgba(0,0,0,0.12),0px_1px_2px_0px_rgba(0,0,0,0.08)] bg-[#FAF9F8] w-full flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="w-full flex-1 flex gap-5 max-md:flex-col overflow-hidden">
+        <main className="w-full flex-1 flex flex-col lg:flex-row overflow-hidden">
           {/* Left side: scrollable */}
-          <section className="w-[44%] max-md:w-full h-full flex flex-col overflow-hidden">
-            <ScrollArea className="h-[calc(100vh-68px)] max-md:h-[50vh] hide-scrollbar">
+          <section className={`${isMobile ? 'w-full h-[60vh]' : 'w-full lg:w-[42%]'} flex flex-col overflow-hidden border-r border-[#DDD]`}>
+            <ScrollArea className="h-full hide-scrollbar">
               {/* Filters pinned to top of left pane */}
               <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4">
                 <FilterBar onFilterChange={handleFilterChange} />
@@ -83,10 +85,10 @@ export default function Index() {
               <div className="bg-[#FAF9F8] w-full">
                 {/* header and controls in a row */}
                 <div className="flex w-full px-6 pt-3 pb-3 border-b border-[#DDD] items-center justify-between">
-                  <h1 className="text-[#131313] text-ellipsis text-lg leading-6 flex-1 font-bold">
+                  <h1 className="text-[#131313] text-ellipsis text-lg leading-6 font-bold">
                     Seattle, WA homes for sale & real estate
                   </h1>
-                  <div className="flex items-center gap-4 text-sm whitespace-nowrap leading-5">
+                  <div className="flex items-center gap-4 text-sm whitespace-nowrap leading-5 ml-4">
                     <span className="text-[#131313]">View:</span>
                     <div className="flex items-center text-[#15727A]">
                       <span>Split</span>
@@ -98,13 +100,13 @@ export default function Index() {
                   </div>
                 </div>
                 {/* number of results and sort row */}
-                <div className="flex w-full px-6 pb-6 border-b border-[#DDD] items-center justify-between">
+                <div className="flex w-full px-6 pb-3 items-center justify-between">
                   <div className="flex gap-1 text-[#131313] text-sm font-bold leading-5 items-center">
                     <span>{visibleHomes.length}</span>
                     <span className="text-[#686868] font-normal">of</span>
                     <span>{homes.length} homes</span>
                   </div>
-                  <div className="flex items-center gap-1 ml-6 whitespace-nowrap text-sm">
+                  <div className="flex items-center gap-1 ml-4 whitespace-nowrap text-sm">
                     <span className="text-[#131313]">Sort:</span>
                     <div className="flex items-center text-[#15727A]">
                       <span>Recommended</span>
@@ -116,10 +118,7 @@ export default function Index() {
                   </div>
                 </div>
                 {/* Property + ad cards */}
-                <div className="content-start flex-wrap flex w-full gap-4 overflow-hidden p-4">
-                  <div className="flex min-w-60 w-[792px] items-center gap-[40px_100px] text-sm font-bold leading-5 justify-between flex-wrap">
-                    {/* This block was a duplicate, removed */}
-                  </div>
+                <div className="content-start flex-wrap flex w-full gap-4 p-4 pb-6">
                   {visibleHomes.map((home, index) => {
                     // Every third home is an ad
                     if ((index + 1) % 3 === 0 && home.isForeclosure) {
@@ -160,7 +159,7 @@ export default function Index() {
             </ScrollArea>
           </section>
           {/* Right side: fixed */}
-          <section className="w-[56%] max-md:w-full max-md:ml-0 h-[calc(100vh-68px)] flex flex-col overflow-hidden">
+          <section className={`${isMobile ? 'w-full h-[40vh]' : 'w-full lg:w-[58%]'} flex flex-col overflow-hidden`}>
             <MapView highlightedHomeId={highlightedHomeId} />
           </section>
         </main>

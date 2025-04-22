@@ -48,7 +48,7 @@ export function PropertyCard({
 
   return (
     <article 
-      className="min-w-[348px] bg-white overflow-hidden flex-1 shrink basis-[0%] rounded-xl property-card"
+      className="min-w-[300px] w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(100%-0.5rem)] bg-white overflow-hidden flex-1 shrink basis-[0%] rounded-xl property-card"
       onMouseEnter={() => onMouseEnter?.(id)}
       onMouseLeave={() => onMouseLeave?.()}
     >
