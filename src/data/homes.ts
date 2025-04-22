@@ -1,7 +1,7 @@
-
 export interface Home {
   id: string;
   imageUrl: string;
+  images?: string[];
   price: number;
   beds: number;
   baths: number;
@@ -12,12 +12,20 @@ export interface Home {
   agent: string;
   isHot?: boolean;
   isForeclosure?: boolean;
+  type?: string;
+  sold?: boolean;
+  forRent?: boolean;
 }
 
 export const homes: Home[] = [
   {
     id: "1",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea"
+    ],
     price: 799000,
     beds: 3,
     baths: 2.5,
@@ -26,11 +34,17 @@ export const homes: Home[] = [
     lat: 47.637087,
     lng: -122.356928,
     agent: "Cory Brandt · RE/MAX Northwest Realtors",
-    isHot: true
+    isHot: true,
+    type: "house"
   },
   {
     id: "2",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 650000,
     beds: 2,
     baths: 1,
@@ -38,11 +52,17 @@ export const homes: Home[] = [
     address: "456 Fremont Ave N, Seattle, WA 98103",
     lat: 47.651340,
     lng: -122.349977,
-    agent: "Sarah Johnson · Windermere Real Estate"
+    agent: "Sarah Johnson · Windermere Real Estate",
+    type: "condo"
   },
   {
     id: "3",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1250000,
     beds: 4,
     baths: 3.5,
@@ -56,6 +76,11 @@ export const homes: Home[] = [
   {
     id: "4",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 875000,
     beds: 3,
     baths: 2,
@@ -69,6 +94,11 @@ export const homes: Home[] = [
   {
     id: "5",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1100000,
     beds: 4,
     baths: 2.5,
@@ -81,6 +111,11 @@ export const homes: Home[] = [
   {
     id: "6",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 749000,
     beds: 3,
     baths: 1.75,
@@ -93,6 +128,11 @@ export const homes: Home[] = [
   {
     id: "7",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 925000,
     beds: 3,
     baths: 2.5,
@@ -106,6 +146,11 @@ export const homes: Home[] = [
   {
     id: "8",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 580000,
     beds: 2,
     baths: 1,
@@ -118,6 +163,11 @@ export const homes: Home[] = [
   {
     id: "9",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1500000,
     beds: 5,
     baths: 3.5,
@@ -131,6 +181,11 @@ export const homes: Home[] = [
   {
     id: "10",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 850000,
     beds: 3,
     baths: 2,
@@ -143,6 +198,11 @@ export const homes: Home[] = [
   {
     id: "11",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1050000,
     beds: 4,
     baths: 2.5,
@@ -156,6 +216,11 @@ export const homes: Home[] = [
   {
     id: "12",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 725000,
     beds: 3,
     baths: 1.5,
@@ -168,6 +233,11 @@ export const homes: Home[] = [
   {
     id: "13",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 975000,
     beds: 3,
     baths: 2.5,
@@ -181,6 +251,11 @@ export const homes: Home[] = [
   {
     id: "14",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 625000,
     beds: 2,
     baths: 1.75,
@@ -193,6 +268,11 @@ export const homes: Home[] = [
   {
     id: "15",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/6d00fc81de657ed1a5e3f59414f4ae834f36a2ea",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1350000,
     beds: 4,
     baths: 3,
@@ -206,6 +286,11 @@ export const homes: Home[] = [
   {
     id: "16",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 890000,
     beds: 3,
     baths: 2,
@@ -218,6 +303,11 @@ export const homes: Home[] = [
   {
     id: "17",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 1200000,
     beds: 4,
     baths: 3,
@@ -231,6 +321,11 @@ export const homes: Home[] = [
   {
     id: "18",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 699000,
     beds: 3,
     baths: 1.5,
@@ -243,6 +338,11 @@ export const homes: Home[] = [
   {
     id: "19",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a"
+    ],
     price: 995000,
     beds: 3,
     baths: 2.5,
@@ -255,6 +355,11 @@ export const homes: Home[] = [
   {
     id: "20",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/2d9ec5061d2bd6a5533823a24e47b96e85d8475c",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/67a92244504a58ae4d71f5e6965a02bc62c49b7a",
+      "https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/b067b35c991bcbfc08e325ed875ddf3434dfbba7"
+    ],
     price: 575000,
     beds: 2,
     baths: 1,
