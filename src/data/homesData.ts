@@ -1,4 +1,3 @@
-
 import { Home } from "./types";
 
 export const homes: Home[] = [
@@ -6,6 +5,7 @@ export const homes: Home[] = [
     id: "1",
     imageUrl: "https://ssl.cdn-redfin.com/photo/27/islphoto/342/genIslnoResize.325026342_0.jpg", // exterior
     images: [
+      "/lovable-uploads/5b465fb8-ce07-4ad9-bbf4-5f3c2880c665.png", // New first image of the house
       "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80", // exterior (modern home)
       "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80", // living room
       "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80", // kitchen
