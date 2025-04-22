@@ -1,8 +1,6 @@
-
 import { Header } from "@/components/layout/Header";
 import { MapView } from "@/components/layout/MapView";
 import { PropertyCard } from "@/components/property/PropertyCard";
-import { AdCard } from "@/components/property/AdCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FilterBar } from "@/components/layout/FilterBar";
 import { homes } from "@/data/homes";
@@ -80,7 +78,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[60vh]'
-                : 'w-full lg:w-[50%] xl:w-[54%] 2xl:w-[58%]'
+                : 'w-full lg:w-[60%] xl:w-[64%] 2xl:w-[68%]'
             } flex flex-col overflow-hidden border-r border-[#DDD]`}
           >
             <ScrollArea className="h-full hide-scrollbar">
@@ -90,7 +88,7 @@ export default function Index() {
               </div>
               <div className="bg-[#FAF9F8] w-full">
                 {/* header and controls in a row */}
-                <div className="flex w-full px-6 pt-3 pb-3 items-center justify-between">
+                <div className="flex w-full px-6 pt-3 pb-3 items-center justify-between flex-wrap">
                   <div className="flex items-center gap-4 text-lg leading-6 font-bold">
                     <h1 className="text-[#131313] text-ellipsis">
                       Seattle, WA homes for sale & real estate
@@ -106,62 +104,43 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                </div>
-                {/* number of results and sort row */}
-                <div className="flex w-full px-6 pb-3 items-center justify-between">
-                  <div className="flex gap-1 text-[#131313] text-sm font-bold leading-5 items-center">
-                    <span>{visibleHomes.length}</span>
-                    <span className="text-[#686868] font-normal">of</span>
-                    <span>{homes.length} homes</span>
-                  </div>
-                  <div className="flex items-center gap-2 whitespace-nowrap text-sm ml-4">
-                    <span className="text-[#131313]">Sort:</span>
-                    <div className="flex items-center text-[#15727A] gap-1">
-                      <span>Recommended</span>
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
-                        className="aspect-[1] object-contain w-6"
-                      />
+                  <div className="flex items-center gap-8 ml-0 mt-1 flex-wrap">
+                    <div className="flex gap-1 text-[#131313] text-sm font-bold leading-5 items-center">
+                      <span>{visibleHomes.length}</span>
+                      <span className="text-[#686868] font-normal">of</span>
+                      <span>{homes.length} homes</span>
+                    </div>
+                    <div className="flex items-center gap-2 whitespace-nowrap text-sm ml-4">
+                      <span className="text-[#131313]">Sort:</span>
+                      <div className="flex items-center text-[#15727A] gap-1">
+                        <span>Recommended</span>
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/cf4d84073bb13b254dcd15d142c64a4c2e5c4258?placeholderIfAbsent=true"
+                          className="aspect-[1] object-contain w-6"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-                {/* Property + ad cards */}
-                <div className="content-start flex-wrap flex w-full gap-4 p-4 pb-6">
-                  {visibleHomes.map((home, index) => {
-                    // Every third home is an ad
-                    if ((index + 1) % 3 === 0 && home.isForeclosure) {
-                      return (
-                        <AdCard
-                          key={home.id}
-                          imageUrl={home.imageUrl}
-                          price={home.price}
-                          beds={home.beds}
-                          baths={home.baths}
-                          sqft={home.sqft}
-                          address={home.address}
-                          logoUrl="https://cdn.builder.io/api/v1/image/assets/87c856cbfc60482abe6dff9ffae95cea/a8ad4c008b0babf307c6a5d1a1c15d1a36b894e5?placeholderIfAbsent=true"
-                        />
-                      );
-                    }
-
-                    return (
-                      <PropertyCard
-                        key={home.id}
-                        id={home.id}
-                        imageUrl={home.imageUrl}
-                        images={home.images}
-                        price={home.price}
-                        beds={home.beds}
-                        baths={home.baths}
-                        sqft={home.sqft}
-                        address={home.address}
-                        agent={home.agent}
-                        isHot={home.isHot}
-                        onMouseEnter={handlePropertyHover}
-                        onMouseLeave={handlePropertyLeave}
-                      />
-                    );
-                  })}
+                {/* Property cards grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 pb-6 auto-rows-fr">
+                  {visibleHomes.map((home) => (
+                    <PropertyCard
+                      key={home.id}
+                      id={home.id}
+                      imageUrl={home.imageUrl}
+                      images={home.images}
+                      price={home.price}
+                      beds={home.beds}
+                      baths={home.baths}
+                      sqft={home.sqft}
+                      address={home.address}
+                      agent={home.agent}
+                      isHot={home.isHot}
+                      onMouseEnter={handlePropertyHover}
+                      onMouseLeave={handlePropertyLeave}
+                    />
+                  ))}
                 </div>
               </div>
             </ScrollArea>
@@ -171,7 +150,7 @@ export default function Index() {
             className={`${
               isMobile
                 ? 'w-full h-[40vh]'
-                : 'w-full lg:w-[50%] xl:w-[46%] 2xl:w-[42%]'
+                : 'w-full lg:w-[40%] xl:w-[36%] 2xl:w-[32%]'
             } flex flex-col overflow-hidden`}
           >
             <MapView highlightedHomeId={highlightedHomeId} />

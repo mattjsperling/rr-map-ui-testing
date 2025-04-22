@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { PropertyStats } from "./PropertyStats";
 import { useState } from "react";
@@ -48,11 +47,12 @@ export function PropertyCard({
 
   return (
     <article 
-      className="min-w-[300px] w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(100%-0.5rem)] bg-white overflow-hidden flex-1 shrink basis-[0%] rounded-xl property-card"
+      className="bg-white overflow-hidden flex flex-col rounded-xl property-card min-h-[387px] max-h-[460px] transition-shadow w-full h-full"
       onMouseEnter={() => onMouseEnter?.(id)}
       onMouseLeave={() => onMouseLeave?.()}
+      style={{ minWidth: 0 }}
     >
-      <div className="flex flex-col overflow-hidden relative aspect-[1.498] w-full">
+      <div className="flex flex-col overflow-hidden relative aspect-[1.577] w-full">
         <img
           src={allImages[currentImageIndex]}
           alt={address}
@@ -76,17 +76,16 @@ export function PropertyCard({
             </button>
           </>
         )}
-        
         {isHot && (
           <div className="absolute items-center content-center flex-wrap z-0 flex w-full max-w-[372px] gap-2 top-2 inset-x-2">
             <Badge className="bg-[#BF3400] text-white font-bold">HOT HOME</Badge>
           </div>
         )}
         <div className="relative z-0 w-full overflow-hidden">
-          <div className="rotate-[-0.729727398005422rad] flex min-h-[259px] w-full" />
+          <div className="rotate-[-0.729727398005422rad] flex min-h-[160px] w-full" />
         </div>
       </div>
-      <div className="w-full text-[#222] font-normal gap-2 p-4">
+      <div className="w-full text-[#222] font-normal gap-2 p-4 flex flex-col flex-grow">
         <div className="items-center content-center flex-wrap flex w-full gap-6 text-lg font-bold leading-6">
           <div className="min-w-[108px] self-stretch flex-1 shrink basis-[0%] my-auto">
             ${price.toLocaleString()}
