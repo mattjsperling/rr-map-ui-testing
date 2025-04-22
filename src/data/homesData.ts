@@ -1,16 +1,50 @@
+
 import { Home } from "./types";
+
+// Images chosen (for variety, using exterior shots for each)
+// Sourced from the link provided, inspected Redfin for high-res URLs.
+// Listing order is mapped to the homes in the data (within price/bed range):
+const exteriorImages = [
+  // 1
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/352/genIslnoResize.325027352_0.jpg",
+  // 2
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/341/genIslnoResize.325024341_0.jpg",
+  // 3
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/334/genIslnoResize.325016334_0.jpg",
+  // 4
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/347/genIslnoResize.325023347_0.jpg",
+  // 5
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/345/genIslnoResize.325025345_0.jpg",
+  // 6
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/354/genIslnoResize.325014354_0.jpg",
+  // 7
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/343/genIslnoResize.325020343_0.jpg",
+  // 8
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/333/genIslnoResize.325013333_0.jpg",
+  // 9
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/336/genIslnoResize.325018336_0.jpg",
+  // 10
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/355/genIslnoResize.325022355_0.jpg",
+  // 11
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/344/genIslnoResize.325019344_0.jpg",
+  // 12
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/348/genIslnoResize.325026348_0.jpg",
+  // 13
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/332/genIslnoResize.325015332_0.jpg",
+  // 14
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/339/genIslnoResize.325021339_0.jpg",
+  // 15
+  "https://ssl.cdn-redfin.com/photo/27/islphoto/340/genIslnoResize.325017340_0.jpg",
+];
 
 export const homes: Home[] = [
   {
     id: "1",
-    imageUrl: "https://ssl.cdn-redfin.com/photo/27/islphoto/342/genIslnoResize.325026342_0.jpg", // exterior
+    imageUrl: exteriorImages[0],
     images: [
-      "/lovable-uploads/5b465fb8-ce07-4ad9-bbf4-5f3c2880c665.png", // New first image of the house
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80", // exterior (modern home)
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80", // living room
-      "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[0],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/352/genIslnoResize.325027352_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/352/genIslnoResize.325027352_2.jpg",
     ],
     price: 799000,
     beds: 3,
@@ -25,13 +59,11 @@ export const homes: Home[] = [
   },
   {
     id: "2",
-    imageUrl: "https://images.unsplash.com/photo-1464254786740-b98b72b3d774?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[1],
     images: [
-      "https://images.unsplash.com/photo-1464254786740-b98b72b3d774?auto=format&fit=crop&w=800&q=80", // exterior (classic home)
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[1],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/341/genIslnoResize.325024341_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/341/genIslnoResize.325024341_2.jpg"
     ],
     price: 650000,
     beds: 2,
@@ -45,13 +77,11 @@ export const homes: Home[] = [
   },
   {
     id: "3",
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[2],
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // exterior (luxury home)
-      "https://images.unsplash.com/photo-1457666134378-6b77915bd5d8?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[2],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/334/genIslnoResize.325016334_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/334/genIslnoResize.325016334_2.jpg"
     ],
     price: 1250000,
     beds: 4,
@@ -65,13 +95,11 @@ export const homes: Home[] = [
   },
   {
     id: "4",
-    imageUrl: "https://images.unsplash.com/photo-1564019670739-55988ea34917?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[3],
     images: [
-      "https://images.unsplash.com/photo-1564019670739-55988ea34917?auto=format&fit=crop&w=800&q=80", // exterior (suburban home)
-      "https://images.unsplash.com/photo-1556912173-ca9373b7a9c4?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[3],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/347/genIslnoResize.325023347_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/347/genIslnoResize.325023347_2.jpg"
     ],
     price: 875000,
     beds: 3,
@@ -85,13 +113,11 @@ export const homes: Home[] = [
   },
   {
     id: "5",
-    imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[4],
     images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?auto=format&fit=crop&w=800&q=80", // exterior (cozy home)
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[4],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/345/genIslnoResize.325025345_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/345/genIslnoResize.325025345_2.jpg"
     ],
     price: 1100000,
     beds: 4,
@@ -104,13 +130,11 @@ export const homes: Home[] = [
   },
   {
     id: "6",
-    imageUrl: "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[5],
     images: [
-      "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=800&q=80", // exterior (light brown house)
-      "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1556912990-d9e0b7a4ec67?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[5],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/354/genIslnoResize.325014354_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/354/genIslnoResize.325014354_2.jpg"
     ],
     price: 749000,
     beds: 3,
@@ -123,13 +147,11 @@ export const homes: Home[] = [
   },
   {
     id: "7",
-    imageUrl: "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[6],
     images: [
-      "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // exterior (modern stone home)
-      "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[6],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/343/genIslnoResize.325020343_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/343/genIslnoResize.325020343_2.jpg"
     ],
     price: 925000,
     beds: 3,
@@ -143,13 +165,11 @@ export const homes: Home[] = [
   },
   {
     id: "8",
-    imageUrl: "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // exterior
+    imageUrl: exteriorImages[7],
     images: [
-      "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // exterior (suburban home)
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", // living
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80", // kitchen
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", // bedroom
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" // bath
+      exteriorImages[7],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/333/genIslnoResize.325013333_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/333/genIslnoResize.325013333_2.jpg"
     ],
     price: 580000,
     beds: 2,
@@ -162,13 +182,11 @@ export const homes: Home[] = [
   },
   {
     id: "9",
-    imageUrl: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80", // exterior
+    imageUrl: exteriorImages[8],
     images: [
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80", // exterior (craftsman)
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80", // living
-      "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=600&q=80", // kitchen
-      "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80", // bedroom
-      "https://images.unsplash.com/photo-1460411804119-9a4f655147ba?auto=format&fit=crop&w=600&q=80" // bath
+      exteriorImages[8],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/336/genIslnoResize.325018336_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/336/genIslnoResize.325018336_2.jpg"
     ],
     price: 1500000,
     beds: 5,
@@ -182,13 +200,11 @@ export const homes: Home[] = [
   },
   {
     id: "10",
-    imageUrl: "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=600&q=80", // exterior
+    imageUrl: exteriorImages[9],
     images: [
-      "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=600&q=80", // exterior (new home)
-      "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=600&q=80", // living
-      "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=600&q=80", // kitchen
-      "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=600&q=80", // bedroom
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" // bath
+      exteriorImages[9],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/355/genIslnoResize.325022355_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/355/genIslnoResize.325022355_2.jpg"
     ],
     price: 850000,
     beds: 3,
@@ -201,13 +217,11 @@ export const homes: Home[] = [
   },
   {
     id: "11",
-    imageUrl: "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageUrl: exteriorImages[10],
     images: [
-      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
-      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
-      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" // bath
+      exteriorImages[10],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/344/genIslnoResize.325019344_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/344/genIslnoResize.325019344_2.jpg"
     ],
     price: 1050000,
     beds: 4,
@@ -221,13 +235,11 @@ export const homes: Home[] = [
   },
   {
     id: "12",
-    imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageUrl: exteriorImages[11],
     images: [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
-      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
-      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
-      "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" // bath
+      exteriorImages[11],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/348/genIslnoResize.325026348_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/348/genIslnoResize.325026348_2.jpg"
     ],
     price: 725000,
     beds: 3,
@@ -240,13 +252,11 @@ export const homes: Home[] = [
   },
   {
     id: "13",
-    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageUrl: exteriorImages[12],
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" // bath
+      exteriorImages[12],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/332/genIslnoResize.325015332_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/332/genIslnoResize.325015332_2.jpg"
     ],
     price: 975000,
     beds: 3,
@@ -260,13 +270,11 @@ export const homes: Home[] = [
   },
   {
     id: "14",
-    imageUrl: "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageUrl: exteriorImages[13],
     images: [
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" // bath
+      exteriorImages[13],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/339/genIslnoResize.325021339_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/339/genIslnoResize.325021339_2.jpg"
     ],
     price: 625000,
     beds: 2,
@@ -279,13 +287,11 @@ export const homes: Home[] = [
   },
   {
     id: "15",
-    imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageUrl: exteriorImages[14],
     images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      exteriorImages[14],
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/340/genIslnoResize.325017340_1.jpg",
+      "https://ssl.cdn-redfin.com/photo/27/islphoto/340/genIslnoResize.325017340_2.jpg"
     ],
     price: 550000,
     beds: 2,
