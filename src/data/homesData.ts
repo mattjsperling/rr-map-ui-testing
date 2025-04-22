@@ -5,7 +5,7 @@ export const homes: Home[] = [
     id: "1",
     imageUrl: "https://ssl.cdn-redfin.com/photo/27/islphoto/342/genIslnoResize.325026342_0.jpg", // exterior
     images: [
-      "/lovable-uploads/5b465fb8-ce07-4ad9-bbf4-5f3c2880c665.png", // New first image of the house
+      "/lovable-uploads/3b20155a-aae9-4c7c-819c-b25590a54abf.png", // New provided image 1
       "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80", // exterior (modern home)
       "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80", // living room
       "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80", // kitchen
@@ -27,7 +27,7 @@ export const homes: Home[] = [
     id: "2",
     imageUrl: "https://images.unsplash.com/photo-1464254786740-b98b72b3d774?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1464254786740-b98b72b3d774?auto=format&fit=crop&w=800&q=80", // exterior (classic home)
+      "/lovable-uploads/1427df1f-6dce-4f76-8c92-cfe25e7f939e.png", // New provided image 2
       "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -47,7 +47,7 @@ export const homes: Home[] = [
     id: "3",
     imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // exterior (luxury home)
+      "/lovable-uploads/5e8344c2-859e-4325-a48f-02b43696470c.png", // New provided image 3
       "https://images.unsplash.com/photo-1457666134378-6b77915bd5d8?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -67,7 +67,7 @@ export const homes: Home[] = [
     id: "4",
     imageUrl: "https://images.unsplash.com/photo-1564019670739-55988ea34917?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1564019670739-55988ea34917?auto=format&fit=crop&w=800&q=80", // exterior (suburban home)
+      "/lovable-uploads/906b6785-8982-462d-8e1f-addf995488a8.png", // New provided image 4
       "https://images.unsplash.com/photo-1556912173-ca9373b7a9c4?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -87,7 +87,7 @@ export const homes: Home[] = [
     id: "5",
     imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?auto=format&fit=crop&w=800&q=80", // exterior (cozy home)
+      "/lovable-uploads/5fa08358-7b48-4304-9c6b-d3b607cf2941.png", // New provided image 5
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -106,7 +106,7 @@ export const homes: Home[] = [
     id: "6",
     imageUrl: "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=800&q=80", // exterior (light brown house)
+      "/lovable-uploads/85628831-fc31-42ca-bf95-3be5b5ce8f15.png", // New provided image 6
       "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -125,7 +125,7 @@ export const homes: Home[] = [
     id: "7",
     imageUrl: "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=800&q=80", // exterior (modern stone home)
+      "/lovable-uploads/ecabd67e-12ae-4b89-8ca3-71315bc4f182.png", // New provided image 7
       "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -145,7 +145,7 @@ export const homes: Home[] = [
     id: "8",
     imageUrl: "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=800&q=80", // exterior (suburban home)
+      "/lovable-uploads/59166ad6-f58f-49c3-bd1d-ebb2f897e6eb.png", // New provided image 8
       "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", // living
       "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80", // kitchen
       "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", // bedroom
@@ -164,7 +164,7 @@ export const homes: Home[] = [
     id: "9",
     imageUrl: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80", // exterior (craftsman)
+      "/lovable-uploads/e8659015-9db2-4988-9bc6-a81dbe774f75.png", // New provided image 9
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80", // living
       "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=600&q=80", // kitchen
       "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80", // bedroom
@@ -184,7 +184,7 @@ export const homes: Home[] = [
     id: "10",
     imageUrl: "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=600&q=80", // exterior
     images: [
-      "https://images.unsplash.com/photo-1531973968078-9bb02785f314?auto=format&fit=crop&w=600&q=80", // exterior (new home)
+      "/lovable-uploads/0d0500c3-3c8b-4071-aeb5-02aac3b7b333.png", // New provided image 10
       "https://images.unsplash.com/photo-1519121783345-3bbdfbe6a041?auto=format&fit=crop&w=600&q=80", // living
       "https://images.unsplash.com/photo-1549187774-b4e9b0445b06?auto=format&fit=crop&w=600&q=80", // kitchen
       "https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=600&q=80", // bedroom
@@ -203,7 +203,7 @@ export const homes: Home[] = [
     id: "11",
     imageUrl: "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
+      "/lovable-uploads/81b74edc-27b5-4551-9b70-48db70c68760.png", // New provided image 11
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
       "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
       "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
@@ -223,7 +223,7 @@ export const homes: Home[] = [
     id: "12",
     imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
+      "/lovable-uploads/e2fc1fcb-fa82-4297-9631-966e7c39e0c2.png", // New provided image 12
       "https://images.unsplash.com/photo-1494526585095-5517f248e7ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
       "https://images.unsplash.com/photo-1520215792330-76526442b845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
@@ -242,7 +242,7 @@ export const homes: Home[] = [
     id: "13",
     imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
+      "/lovable-uploads/8dc031cc-aa7c-412b-bb42-9937c8a52333.png", // New provided image 13
       "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
       "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
@@ -262,7 +262,7 @@ export const homes: Home[] = [
     id: "14",
     imageUrl: "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // exterior
+      "/lovable-uploads/ee673b21-34d5-49d1-a7ee-0e0c53b76436.png", // New provided image 14
       "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // living
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // kitchen
       "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", // bedroom
@@ -281,19 +281,7 @@ export const homes: Home[] = [
     id: "15",
     imageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "/lovable-uploads/66ae71e9-da56-4fb5-b3d0-05d0324d4b4b.png", // New provided image 15
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1599420186946-7b6ca84ef957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-    ],
-    price: 550000,
-    beds: 2,
-    baths: 1,
-    sqft: 1000,
-    address: "123 S Jackson St, Seattle, WA 98104",
-    lat: 47.599110,
-    lng: -122.335320,
-    agent: "Kevin Harris · Redfin"
-  }
-];
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdl
