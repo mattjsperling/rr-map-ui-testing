@@ -1,3 +1,4 @@
+
 import { Heart, Share2 } from "lucide-react";
 import React, { useState } from "react";
 import { Carousel } from "@/components/ui/carousel"
@@ -102,8 +103,7 @@ export function PropertyCard({
             <p className="text-gray-600 text-sm">Listed by {agent}</p>
           </div>
         </div>
-        {/* Favorite/Share row, similar to attached UI */}
-        <div className="favorite-share-row mt-2 mb-2">
+        <div className="favorite-share-row mt-2 mb-2 flex gap-4 px-4">
           <button
             aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
             className={`focus:outline-none transition`}
@@ -120,7 +120,6 @@ export function PropertyCard({
             className="focus:outline-none transition"
             onClick={e => {
               e.stopPropagation();
-              // Would trigger share logic (e.g., open share dialog)
               window?.navigator?.share?.({ url: window.location.href })?.catch(() => {});
             }}
             style={{ color: "#ACACAC" }}
@@ -128,8 +127,8 @@ export function PropertyCard({
             <Share2 className="w-5 h-5" />
           </button>
         </div>
-        {/* ... rest of property card (description, details, etc) ... */}
       </div>
     </div>
   );
 }
+
