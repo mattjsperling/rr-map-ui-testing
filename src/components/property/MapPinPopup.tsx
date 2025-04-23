@@ -1,8 +1,10 @@
 
-import { X, ChevronLeft, ChevronRight, Heart, Share } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Heart, Share2 } from "lucide-react";
 import { Home } from "@/data/types";
 import { PropertyStats } from "./PropertyStats";
 import { useState } from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface MapPinPopupProps {
   home: Home;
@@ -12,6 +14,7 @@ interface MapPinPopupProps {
 export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
   const images = home.images || [home.imageUrl];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isFavorite, setFavorite] = useState(false);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -24,7 +27,7 @@ export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
   };
 
   return (
-    <div className="absolute z-50 bg-white rounded-xl shadow-lg w-72 overflow-hidden transform -translate-x-1/2 -translate-y-full mt-[-10px]">
+    <div className="bg-white rounded-xl shadow-lg w-72 overflow-hidden transform -translate-x-1/2">
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -36,55 +39,82 @@ export function MapPinPopup({ home, onClose }: MapPinPopupProps) {
         <X size={16} />
       </button>
       
-      <div className="relative h-40 w-full">
-        <img
-          src={images[currentImageIndex]}
-          alt={home.address}
-          className="absolute h-full w-full object-cover"
-        />
-        
-        {images.length > 1 && (
-          <>
-            <button 
-              onClick={prevImage} 
-              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 rounded-full p-1"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <button 
-              onClick={nextImage} 
-              className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 rounded-full p-1"
-              aria-label="Next image"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </>
+      <div className="relative">
+        {images && images.length > 1 ? (
+          <Carousel className="relative w-full" opts={{ loop: true }}>
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={image}
+                      alt={`Property ${index + 1}`}
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="carousel-arrow carousel-arrow-left" />
+            <CarouselNext className="carousel-arrow carousel-arrow-right" />
+          </Carousel>
+        ) : (
+          <AspectRatio ratio={16 / 9}>
+            <img
+              src={images[0]}
+              alt="Property"
+              className="object-cover w-full h-full"
+            />
+          </AspectRatio>
         )}
         
         {home.isHot && (
-          <div className="absolute top-2 left-2">
-            <span className="bg-[#BF3400] text-white text-xs px-2 py-1 rounded-md font-bold">
-              HOT HOME
-            </span>
-          </div>
+          <span className="absolute top-3 right-3 z-20 bg-red-100 text-red-600 rounded-full text-xs font-bold px-3 py-1 uppercase shadow">
+            Hot
+          </span>
         )}
       </div>
       
-      <div className="p-3 pb-2">
-        <div className="font-bold text-lg">${home.price.toLocaleString()}</div>
-        <PropertyStats beds={home.beds} baths={home.baths} sqft={home.sqft} />
-        <div className="text-xs mt-2 text-gray-700 truncate">{home.address}</div>
-        <div className="text-xs mt-1 text-gray-500 truncate">{home.agent}</div>
-      </div>
-      {/* ACTION ICONS */}
-      <div className="flex justify-end items-center pb-2 px-3">
-        <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Add to favorites">
-          <Heart className="text-[#6E59A5] group-hover:text-[#BF3400] transition-colors" strokeWidth={2} size={22} />
-        </button>
-        <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Share">
-          <Share className="text-[#7E69AB] group-hover:text-[#1EAEDB] transition-colors" strokeWidth={2} size={22} />
-        </button>
+      <div className="flex flex-col">
+        <div className="flex items-start justify-between px-4 pt-3">
+          <span className="font-bold text-[18px] leading-[24px] text-[#222]">
+            ${home.price.toLocaleString('en-US')}
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+              className="focus:outline-none transition p-1 rounded-full hover:bg-[#f1f1f1]"
+              onClick={e => {
+                e.stopPropagation();
+                setFavorite(f => !f);
+              }}
+              style={{color: isFavorite ? "#C82021" : "#ACACAC"}}
+            >
+              <Heart className="w-5 h-5" fill={isFavorite ? "#C82021" : "none"} />
+            </button>
+            <button
+              aria-label="Share"
+              className="focus:outline-none transition p-1 rounded-full hover:bg-[#f1f1f1]"
+              onClick={e => {
+                e.stopPropagation();
+                window?.navigator?.share?.({ url: window.location.href })?.catch(() => {});
+              }}
+              style={{ color: "#ACACAC" }}
+            >
+              <Share2 className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+        <div className="flex items-center space-x-2 px-4 text-[14px] leading-[20px] text-[#222]">
+          <span>{home.beds} beds</span>
+          <span className="mx-1">•</span>
+          <span>{home.baths} baths</span>
+          <span className="mx-1">•</span>
+          <span>{home.sqft.toLocaleString()} sqft</span>
+        </div>
+        <div className="mt-2 px-4 pb-4 text-[12px] leading-[16px] text-[#222]">
+          <p>{home.address}</p>
+        </div>
       </div>
     </div>
   );

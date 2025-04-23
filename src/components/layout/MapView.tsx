@@ -155,8 +155,10 @@ export function MapView({ highlightedHomeId, onMarkerClick }: MapViewProps) {
     if (!map.current || !popupCoords) return null;
     
     const point = map.current.project(new mapboxgl.LngLat(popupCoords[0], popupCoords[1]));
-    // Add offset: move popup left by 100px, up by 120px for better visibility beside pin
-    return { left: point.x + 30, top: point.y - 150 };
+    
+    // Calculate position - place popup to the side of the pin
+    // We're positioning to the right of the pin with a horizontal offset of 100px
+    return { left: point.x + 90, top: point.y - 100 };
   };
 
   const screenCoords = getScreenCoords();
@@ -203,6 +205,7 @@ export function MapView({ highlightedHomeId, onMarkerClick }: MapViewProps) {
             left: `${screenCoords.left}px`,
             top: `${screenCoords.top}px`,
             zIndex: 100,
+            width: 'auto',
           }}
           onClick={(e) => e.stopPropagation()}
         >
