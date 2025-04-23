@@ -1,5 +1,5 @@
-import { Heart, Share2 } from "lucide-react";
 import React, { useState } from "react";
+import { Heart, Share2 } from "lucide-react";
 import { Carousel } from "@/components/ui/carousel"
 import {
   CarouselContent,
@@ -96,7 +96,7 @@ export function PropertyCard({
           <div className="flex items-center gap-2">
             <button
               aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-              className="focus:outline-none transition p-2 rounded-full hover:bg-[#f1f1f1]"
+              className="focus:outline-none transition p-1 rounded-full hover:bg-[#f1f1f1]"
               onClick={e => {
                 e.stopPropagation();
                 setFavorite(f => !f);
@@ -107,7 +107,7 @@ export function PropertyCard({
             </button>
             <button
               aria-label="Share"
-              className="focus:outline-none transition p-2 rounded-full hover:bg-[#f1f1f1]"
+              className="focus:outline-none transition p-1 rounded-full hover:bg-[#f1f1f1]"
               onClick={e => {
                 e.stopPropagation();
                 window?.navigator?.share?.({ url: window.location.href })?.catch(() => {});
@@ -118,7 +118,7 @@ export function PropertyCard({
             </button>
           </div>
         </div>
-        <div className={`flex items-center space-x-2 mt-1 px-4 ${typography.stats}`}>
+        <div className={`flex items-center space-x-2 px-4 ${typography.stats}`}>
           <span>{beds} beds</span>
           <span className="mx-1">•</span>
           <span>{baths} baths</span>
