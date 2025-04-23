@@ -1,4 +1,3 @@
-
 import { Heart, Share2 } from "lucide-react";
 import React, { useState } from "react";
 import { Carousel } from "@/components/ui/carousel"
@@ -96,7 +95,7 @@ export function PropertyCard({
         {/* Price and icons row */}
         <div className="flex items-start justify-between px-4 pt-3">
           <span className={typography.price}>
-            ${price.toLocaleString()}
+            ${price.toLocaleString('en-US')}
           </span>
           <div className="flex items-center gap-2">
             <button
@@ -132,8 +131,8 @@ export function PropertyCard({
           <span>{sqft.toLocaleString()} sqft</span>
         </div>
         {/* Address */}
-        <div className={`mt-2 px-4 pb-4`}>
-          <h2 className={typography.address}>{address}</h2>
+        <div className={`mt-2 px-4 pb-4 ${typography.address}`}>
+          <h2>{address}</h2>
         </div>
       </div>
     </div>
