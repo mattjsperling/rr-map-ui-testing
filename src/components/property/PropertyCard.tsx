@@ -9,6 +9,12 @@ import {
 } from "@/components/ui/carousel"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 
+const typography = {
+  price: "font-bold text-[18px] leading-[24px] text-[#222]",
+  stats: "font-normal text-[14px] leading-[20px] text-[#222]",
+  address: "font-normal text-[12px] leading-[16px] text-[#222]",
+};
+
 interface PropertyCardProps {
   id: string;
   imageUrl: string;
@@ -24,13 +30,6 @@ interface PropertyCardProps {
   onMouseLeave?: () => void;
   showActions?: boolean;
 }
-
-// Custom typography utility classes for card
-const typography = {
-  price: "font-[Inter] font-bold text-[18px] leading-[24px] text-[#222]",
-  stats: "font-[Inter] font-normal text-[14px] leading-[20px] text-[#222]",
-  address: "font-[Inter] font-normal text-[12px] leading-[16px] text-[#222]",
-};
 
 export function PropertyCard({
   id,
@@ -55,7 +54,6 @@ export function PropertyCard({
       onMouseEnter={() => onMouseEnter && onMouseEnter(id)}
       onMouseLeave={() => onMouseLeave && onMouseLeave()}
     >
-      {/* Image/Carousel with hot badge on top right */}
       <div className="relative">
         {images && images.length > 0 ? (
           <Carousel className="relative w-full" opts={{ loop: true }}>
@@ -84,7 +82,6 @@ export function PropertyCard({
             />
           </AspectRatio>
         )}
-        {/* Hot badge */}
         {isHot && (
           <span className="absolute top-3 right-3 z-20 bg-red-100 text-red-600 rounded-full text-xs font-bold px-3 py-1 uppercase shadow">
             Hot
@@ -92,7 +89,6 @@ export function PropertyCard({
         )}
       </div>
       <div className="flex-1 flex flex-col">
-        {/* Price and icons row */}
         <div className="flex items-start justify-between px-4 pt-3">
           <span className={typography.price}>
             ${price.toLocaleString('en-US')}
@@ -122,7 +118,6 @@ export function PropertyCard({
             </button>
           </div>
         </div>
-        {/* Stats */}
         <div className={`flex items-center space-x-2 mt-1 px-4 ${typography.stats}`}>
           <span>{beds} beds</span>
           <span className="mx-1">•</span>
@@ -130,7 +125,6 @@ export function PropertyCard({
           <span className="mx-1">•</span>
           <span>{sqft.toLocaleString()} sqft</span>
         </div>
-        {/* Address */}
         <div className={`mt-2 px-4 pb-4 ${typography.address}`}>
           <h2>{address}</h2>
         </div>
