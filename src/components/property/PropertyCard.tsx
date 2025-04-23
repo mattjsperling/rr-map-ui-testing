@@ -1,123 +1,135 @@
-
-import { Badge } from "@/components/ui/badge";
-import { PropertyStats } from "./PropertyStats";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Heart, Share } from "lucide-react";
+import { Heart, Share2 } from "lucide-react";
+import React, { useState } from "react";
+import { Carousel } from "@/components/ui/carousel"
+import {
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 interface PropertyCardProps {
   id: string;
   imageUrl: string;
-  images?: string[];
+  images: string[];
   price: number;
   beds: number;
   baths: number;
   sqft: number;
   address: string;
   agent: string;
-  isHot?: boolean;
+  isHot: boolean;
   onMouseEnter?: (id: string) => void;
   onMouseLeave?: () => void;
-  showActions?: boolean; // New prop: Show fav/share row
+  showActions?: boolean;
 }
 
 export function PropertyCard({
   id,
   imageUrl,
-  images = [],
+  images,
   price,
   beds,
   baths,
   sqft,
   address,
   agent,
-  isHot = false,
+  isHot,
   onMouseEnter,
   onMouseLeave,
-  showActions = false,
+  showActions,
 }: PropertyCardProps) {
-  const allImages = images.length > 0 ? images : [imageUrl];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
-  };
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
-  };
+  const [isFavorite, setFavorite] = useState(false);
 
   return (
-    <article 
-      className="bg-white overflow-hidden flex flex-col rounded-xl property-card w-full transition-shadow"
-      style={{
-        minWidth: 420,
-        maxWidth: 440,
-        width: "100%"
-      }}
-      onMouseEnter={() => onMouseEnter?.(id)}
-      onMouseLeave={() => onMouseLeave?.()}
+    <div
+      className="property-card bg-white rounded-xl overflow-hidden shadow hover:shadow-lg flex flex-col relative"
+      onMouseEnter={() => onMouseEnter && onMouseEnter(id)}
+      onMouseLeave={() => onMouseLeave && onMouseLeave()}
     >
-      <div className="flex flex-col overflow-hidden relative aspect-[1.577] w-full">
+      {images && images.length > 0 ? (
+        <Carousel
+          className="relative w-full"
+          opts={{
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-1 pl-1">
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="pl-1">
+                <div className="p-1">
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={image}
+                      alt={`Property ${index + 1}`}
+                      className="object-cover rounded-md"
+                    />
+                  </AspectRatio>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="carousel-arrow carousel-arrow-left" />
+          <CarouselNext className="carousel-arrow carousel-arrow-right" />
+        </Carousel>
+      ) : (
         <img
-          src={allImages[currentImageIndex]}
-          alt={address}
-          className="absolute h-full w-full object-cover inset-0 transition-opacity duration-300"
+          src={imageUrl}
+          alt="Property"
+          className="w-full h-48 object-cover"
         />
-        {allImages.length > 1 && (
-          <>
-            <button 
-              onClick={prevImage} 
-              className="carousel-arrow carousel-arrow-left"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={nextImage} 
-              className="carousel-arrow carousel-arrow-right"
-              aria-label="Next image"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </>
-        )}
-        {isHot && (
-          <div className="absolute items-center content-center flex-wrap z-0 flex w-full max-w-[372px] gap-2 top-2 inset-x-2">
-            <Badge className="bg-[#BF3400] text-white font-bold">HOT HOME</Badge>
-          </div>
-        )}
-        <div className="relative z-0 w-full overflow-hidden">
-          <div className="rotate-[-0.729727398005422rad] flex min-h-[160px] w-full" />
-        </div>
-      </div>
-      <div className="w-full text-[#222] font-normal gap-2 p-4 flex flex-col flex-grow">
-        <div className="items-center content-center flex-wrap flex w-full gap-6 text-lg font-bold leading-6">
-          <div className="min-w-[108px] self-stretch flex-1 shrink basis-[0%] my-auto">
-            ${price.toLocaleString()}
-          </div>
-        </div>
-        <div className="w-full mt-2">
-          <PropertyStats beds={beds} baths={baths} sqft={sqft} />
-          <div className="flex-1 shrink basis-[0%] w-full gap-1 text-xs leading-none mt-2">
-            {address}
-          </div>
-        </div>
-        <div className="flex-1 shrink basis-[0%] w-full gap-2 text-xs text-[#676767] leading-none mt-2">
-          {agent}
-        </div>
-      </div>
-      {showActions && (
-        <div className="flex justify-end items-center pb-2 px-4">
-          <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Add to favorites">
-            <Heart className="text-[#6E59A5] group-hover:text-[#BF3400] transition-colors" strokeWidth={2} size={22} />
-          </button>
-          <button className="group p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="Share">
-            <Share className="text-[#7E69AB] group-hover:text-[#1EAEDB] transition-colors" strokeWidth={2} size={22} />
-          </button>
-        </div>
       )}
-    </article>
+      <div className="flex-1 flex flex-col">
+        <div className="px-4 pt-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xl font-semibold text-gray-800">${price}</span>
+            {isHot && (
+              <span className="px-2 py-1 bg-red-100 text-red-600 rounded-full text-xs font-medium uppercase">
+                Hot
+              </span>
+            )}
+          </div>
+          <div className="flex items-center text-gray-600 mt-1">
+            <span>{beds} beds</span>
+            <span className="mx-2">•</span>
+            <span>{baths} baths</span>
+            <span className="mx-2">•</span>
+            <span>{sqft} sqft</span>
+          </div>
+          <div className="mt-2">
+            <h2 className="text-gray-900 font-medium">{address}</h2>
+            <p className="text-gray-600 text-sm">Listed by {agent}</p>
+          </div>
+        </div>
+        {/* Favorite/Share row, similar to attached UI */}
+        <div className="favorite-share-row mt-2 mb-2">
+          <button
+            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            className={`focus:outline-none transition`}
+            onClick={e => {
+              e.stopPropagation();
+              setFavorite(f => !f);
+            }}
+            style={{ color: isFavorite ? "#C82021" : "#ACACAC" }}
+          >
+            <Heart className={`w-5 h-5`} fill={isFavorite ? "#C82021" : "none"} />
+          </button>
+          <button
+            aria-label="Share"
+            className="focus:outline-none transition"
+            onClick={e => {
+              e.stopPropagation();
+              // Would trigger share logic (e.g., open share dialog)
+              window?.navigator?.share?.({ url: window.location.href })?.catch(() => {});
+            }}
+            style={{ color: "#ACACAC" }}
+          >
+            <Share2 className="w-5 h-5" />
+          </button>
+        </div>
+        {/* ... rest of property card (description, details, etc) ... */}
+      </div>
+    </div>
   );
 }

@@ -2,6 +2,8 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { FilterBar } from "@/components/layout/FilterBar";
+import { ViewToggle, ViewMode } from "@/components/layout/ViewToggle";
+import { SortMenu, SortMode } from "@/components/layout/SortMenu";
 import { Home } from "@/data/types";
 import { useState } from "react";
 
@@ -12,8 +14,10 @@ interface PropertyListProps {
   onPropertyLeave: () => void;
   filters: Record<string, string>;
   onFilterChange: (newFilters: Record<string, string>) => void;
-  sortMode: "recommended" | "price" | "newest";
-  onSortChange: (sortMode: "recommended" | "price" | "newest") => void;
+  sortMode: SortMode;
+  onSortChange: (sortMode: SortMode) => void;
+  viewMode: ViewMode;
+  onViewChange: (mode: ViewMode) => void;
 }
 
 export function PropertyList({
@@ -25,53 +29,32 @@ export function PropertyList({
   onFilterChange,
   sortMode,
   onSortChange,
+  viewMode,
+  onViewChange,
 }: PropertyListProps) {
   return (
     <ScrollArea className="h-full hide-scrollbar">
       <div className="sticky top-0 z-10 bg-[#FAF9F8] pt-4 pb-2 px-4">
         <FilterBar onFilterChange={onFilterChange} />
-      </div>
-      <div className="bg-[#FAF9F8] w-full">
-        <div className="flex flex-col w-full px-6 pt-3 pb-3 gap-1">
-          <div className="flex items-center gap-4 text-lg leading-6 font-bold">
-            <h1 className="text-[#131313] text-ellipsis">
+        {/* Controls now above the list */}
+        <div className="flex flex-wrap items-center gap-3 justify-between mt-3">
+          <div className="flex items-center gap-6">
+            <span className="font-bold text-lg text-[#131313]">
               Seattle, WA homes for sale & real estate
-            </h1>
+            </span>
+            <span className="ml-2 text-[#131313] text-sm font-bold">
+              {homes.length}
+              <span className="text-[#686868] font-normal ml-1">of {homes.length} homes</span>
+            </span>
           </div>
-          
-          {/* Results count and sorting options */}
-          <div className="flex flex-wrap items-center gap-6 justify-between mt-2">
-            <div className="flex gap-2 text-[#131313] text-sm font-bold leading-5 items-center">
-              <span>{homes.length}</span>
-              <span className="text-[#686868] font-normal">of</span>
-              <span>{homes.length} homes</span>
-              
-              {/* Sort as clickable text */}
-              <div className="relative ml-4">
-                <div className="flex items-center gap-1 cursor-pointer select-none text-[#15727A] font-semibold text-sm" onClick={() => {
-                  const nextSort = sortMode === "recommended" ? "price" : 
-                                  sortMode === "price" ? "newest" : "recommended";
-                  onSortChange(nextSort);
-                }}>
-                  <span>
-                    {sortMode === "recommended" 
-                      ? "Recommended"
-                      : sortMode === "price"
-                      ? "Price"
-                      : "Newest"}
-                  </span>
-                  {sortMode === "price" ? (
-                    <span className="inline-flex">↓</span>
-                  ) : (
-                    <span className="inline-flex">↑</span>
-                  )}
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-3">
+            {/* Sort menu as select */}
+            <SortMenu sortMode={sortMode} onSortChange={onSortChange} />
+            <ViewToggle viewMode={viewMode} onViewChange={onViewChange} />
           </div>
         </div>
-
-        {/* Property cards grid */}
+      </div>
+      <div className="bg-[#FAF9F8] w-full">
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3 pb-6 auto-rows-fr justify-center"
           style={{
@@ -94,6 +77,7 @@ export function PropertyList({
               onMouseEnter={onPropertyHover}
               onMouseLeave={onPropertyLeave}
               showActions
+              // Pass additional props for favorite/share/leftpane if needed in future
             />
           ))}
         </div>
